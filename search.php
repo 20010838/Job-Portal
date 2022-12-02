@@ -15,9 +15,9 @@ if(isset($_GET["page"])) {
 $start_from = ($page-1) * $limit;
 
 
-if(isset($_GET['filter']) && $_GET['filter']=='city') {
+if(isset($_GET['filter']) && $_GET['filter']=='state') {
 
-  $sql = "SELECT * FROM company WHERE city='$_GET[search]'";
+  $sql = "SELECT * FROM company WHERE state ='$_GET[search]'";
 
   $result = $conn->query($sql);
   if($result->num_rows > 0) {
@@ -32,9 +32,9 @@ if(isset($_GET['filter']) && $_GET['filter']=='city') {
          <div class="attachment-block clearfix">
                 <img class="attachment-img" src="uploads/logo/<?php echo $row1['logo']; ?>" alt="Attachment Image">
                 <div class="attachment-pushed">
-                  <h4 class="attachment-heading"><a href="view-job-post.php?id=<?php echo $row['id_jobpost']; ?>"><?php echo $row['jobtitle']; ?></a> <span class="attachment-heading pull-right">$<?php echo $row['maximumsalary']; ?>/Month</span></h4>
+                  <h4 class="attachment-heading"><a href="view-job-post.php?id=<?php echo $row['id_jobpost']; ?>"><?php echo $row['jobtitle']; ?></a> <span class="attachment-heading pull-right">VNĐ<?php echo number_format($row['maximumsalary'],0,'','.'); ?>/Tháng</span></h4>
                   <div class="attachment-text">
-                      <div><strong><?php echo $row1['companyname']; ?> | <?php echo $row1['city']; ?> | Experience <?php echo $row['experience']; ?> Years</strong></div>
+                      <div><strong><?php echo $row1['companyname']; ?> | <?php echo $row1['state']; ?> | Kinh nghiệm <?php echo $row['experience']; ?> Năm</strong></div>
                   </div>
                 </div>
               </div>
@@ -58,8 +58,10 @@ if(isset($_GET['filter']) && $_GET['filter']=='city') {
 
     $sql = "SELECT * FROM job_post WHERE experience>='$_GET[search]' LIMIT $start_from, $limit";
 
-  }
+  } else if(isset($_GET['filter']) && $_GET['filter']=='maximumsalary') {
 
+    $sql = "SELECT * FROM job_post WHERE '$_GET[search]'<=maximumsalary LIMIT $start_from, $limit";
+  }
   $result = $conn->query($sql);
   if($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
@@ -73,9 +75,9 @@ if(isset($_GET['filter']) && $_GET['filter']=='city') {
          <div class="attachment-block clearfix">
                 <img class="attachment-img" src="uploads/logo/<?php echo $row1['logo']; ?>" alt="Attachment Image">
                 <div class="attachment-pushed">
-                  <h4 class="attachment-heading"><a href="view-job-post.php?id=<?php echo $row['id_jobpost']; ?>"><?php echo $row['jobtitle']; ?></a> <span class="attachment-heading pull-right">$<?php echo $row['maximumsalary']; ?>/Month</span></h4>
+                  <h4 class="attachment-heading"><a href="view-job-post.php?id=<?php echo $row['id_jobpost']; ?>"><?php echo $row['jobtitle']; ?></a> <span class="attachment-heading pull-right">VNĐ<?php echo number_format($row['maximumsalary'],0,'','.'); ?>/Tháng</span></h4>
                   <div class="attachment-text">
-                      <div><strong><?php echo $row1['companyname']; ?> | <?php echo $row1['city']; ?> | Experience <?php echo $row['experience']; ?> Years</strong></div>
+                      <div><strong><?php echo $row1['companyname']; ?> | <?php echo $row1['state']; ?> | Kinh nghiệm <?php echo $row['experience']; ?> Năm</strong></div>
                   </div>
                 </div>
               </div>

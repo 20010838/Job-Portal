@@ -12,7 +12,7 @@ require_once("db.php");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Job Portal</title>
+  <title>Cổng việc làm</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -47,7 +47,7 @@ require_once("db.php");
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>J</b>P</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Job</b> Portal</span>
+      <span class="logo-lg"><b>Cổng</b> việc làm</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -56,40 +56,40 @@ require_once("db.php");
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <li>
-            <a href="jobs.php">Jobs</a>
+            <a href="jobs.php">Công việc</a>
           </li>
           <li>
-            <a href="#candidates">Candidates</a>
+            <a href="#candidates">Ứng viên</a>
           </li>
           <li>
-            <a href="#company">Company</a>
+            <a href="#company">Công ty</a>
           </li>
           <li>
             <a href="#about">About Us</a>
           </li>
           <?php if(empty($_SESSION['id_user']) && empty($_SESSION['id_company'])) { ?>
           <li>
-            <a href="login.php">Login</a>
+            <a href="login.php">Đăng nhập</a>
           </li>
           <li>
-            <a href="sign-up.php">Sign Up</a>
+            <a href="sign-up.php">Đăng ký</a>
           </li>  
           <?php } else { 
 
             if(isset($_SESSION['id_user'])) { 
           ?>        
           <li>
-            <a href="user/index.php">Dashboard</a>
+            <a href="user/index.php">Bảng điều khiển</a>
           </li>
           <?php
           } else if(isset($_SESSION['id_company'])) { 
           ?>        
           <li>
-            <a href="company/index.php">Dashboard</a>
+            <a href="company/index.php">Bảng điều khiển</a>
           </li>
           <?php } ?>
           <li>
-            <a href="logout.php">Logout</a>
+            <a href="logout.php">Đăng xuất</a>
           </li>
           <?php } ?>
         </ul>
@@ -104,9 +104,9 @@ require_once("db.php");
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center index-head">
-            <h1>All <strong>JOBS</strong> In One Place</h1>
-            <p>One search, global reach</p>
-            <p><a class="btn btn-success btn-lg" href="jobs.php" role="button">Search Jobs</a></p>
+          <h1> Tìm<strong> kiếm</strong> Ngay</h1>
+            <p>Hãy tìm công việc mà ban yêu thích</p>
+            <p><a class="btn btn-success btn-lg" href="jobs.php" role="button">Tìm kiếm công việc</a></p>
           </div>
         </div>
       </div>
@@ -116,7 +116,7 @@ require_once("db.php");
       <div class="container">
         <div class="row">
           <div class="col-md-12 latest-job margin-bottom-20">
-            <h1 class="text-center">Latest Jobs</h1>            
+            <h1 class="text-center">Việc làm mới nhất</h1>            
             <?php 
           /* Show any 4 random job post
            * 
@@ -137,9 +137,9 @@ require_once("db.php");
             <div class="attachment-block clearfix">
               <img class="attachment-img" src="img/photo1.png" alt="Attachment Image">
               <div class="attachment-pushed">
-                <h4 class="attachment-heading"><a href="view-job-post.php?id=<?php echo $row['id_jobpost']; ?>"><?php echo $row['jobtitle']; ?></a> <span class="attachment-heading pull-right">$<?php echo $row['maximumsalary']; ?>/Month</span></h4>
+                <h4 class="attachment-heading"><a href="view-job-post.php?id=<?php echo $row['id_jobpost']; ?>"><?php echo $row['jobtitle']; ?></a> <span class="attachment-heading pull-right">VNĐ<?php echo number_format($row['maximumsalary'],0,'','.'); ?>/Tháng</span></h4>
                 <div class="attachment-text">
-                    <div><strong><?php echo $row1['companyname']; ?> | <?php echo $row1['city']; ?> | Experience <?php echo $row['experience']; ?> Years</strong></div>
+                    <div><strong><?php echo $row1['companyname']; ?> | <?php echo $row1['state']; ?> | Kinh nghiệm <?php echo $row['experience']; ?> Năm</strong></div>
                 </div>
               </div>
             </div>
@@ -159,8 +159,8 @@ require_once("db.php");
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center latest-job margin-bottom-20">
-            <h1>Candidates</h1>
-            <p>Finding a job just got easier. Create a profile and apply with single mouse click.</p>            
+            <h1>Ứng viên</h1>
+            <p>Tìm một công việc trở nên dễ dàng hơn. Tạo hồ sơ và đăng ký chỉ với một cú nhấp chuột.</p>            
           </div>
         </div>
         <div class="row">
@@ -168,7 +168,7 @@ require_once("db.php");
             <div class="thumbnail candidate-img">
               <img src="img/browse.jpg" alt="Browse Jobs">
               <div class="caption">
-                <h3 class="text-center">Browse Jobs</h3>
+                <h3 class="text-center">Tìm kiếm công việc</h3>
               </div>
             </div>
           </div>
@@ -176,15 +176,15 @@ require_once("db.php");
             <div class="thumbnail candidate-img">
               <img src="img/interviewed.jpeg" alt="Apply & Get Interviewed">
               <div class="caption">
-                <h3 class="text-center">Apply & Get Interviewed</h3>
+                <h3 class="text-center">Ứng tuyển và phỏng vấn</h3>
               </div>
             </div>
           </div>
           <div class="col-sm-4 col-md-4">
             <div class="thumbnail candidate-img">
-              <img src="img/career.jpg" alt="Start A Career">
+              <img src="img/career.jpg" alt="Khởi nghiệp">
               <div class="caption">
-                <h3 class="text-center">Start A Career</h3>
+                <h3 class="text-center">Khởi nghiệp</h3>
               </div>
             </div>
           </div>
@@ -196,8 +196,8 @@ require_once("db.php");
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center latest-job margin-bottom-20">
-            <h1>Companies</h1>
-            <p>Hiring? Register your company for free, browse our talented pool, post and track job applications</p>            
+            <h1>Các công ty</h1>
+            <p>test</p>            
           </div>
         </div>
         <div class="row">
@@ -205,7 +205,7 @@ require_once("db.php");
             <div class="thumbnail company-img">
               <img src="img/postjob.png" alt="Browse Jobs">
               <div class="caption">
-                <h3 class="text-center">Post A Job</h3>
+                <h3 class="text-center">Đăng một công việc</h3>
               </div>
             </div>
           </div>
@@ -213,7 +213,7 @@ require_once("db.php");
             <div class="thumbnail company-img">
               <img src="img/manage.jpg" alt="Apply & Get Interviewed">
               <div class="caption">
-                <h3 class="text-center">Manage & Track</h3>
+                <h3 class="text-center">Quản lý & Theo dõi</h3>
               </div>
             </div>
           </div>
@@ -221,7 +221,7 @@ require_once("db.php");
             <div class="thumbnail company-img">
               <img src="img/hire.png" alt="Start A Career">
               <div class="caption">
-                <h3 class="text-center">Hire</h3>
+                <h3 class="text-center">Thuê nhân viên</h3>
               </div>
             </div>
           </div>
@@ -233,7 +233,7 @@ require_once("db.php");
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center latest-job margin-bottom-20">
-            <h1>Our Statistics</h1>
+            <h1>Thống kê</h1>
           </div>
         </div>
         <div class="row">
@@ -252,7 +252,7 @@ require_once("db.php");
                     ?>
               <h3><?php echo $totalno; ?></h3>
 
-              <p>Job Offers</p>
+              <p>Công việc</p>
             </div>
             <div class="icon">
               <i class="ion ion-ios-paper"></i>
@@ -275,7 +275,7 @@ require_once("db.php");
                     ?>
               <h3><?php echo $totalno; ?></h3>
 
-              <p>Registered Company</p>
+              <p>Công ty đã đăng ký</p>
             </div>
             <div class="icon">
                 <i class="ion ion-briefcase"></i>
@@ -298,7 +298,7 @@ require_once("db.php");
                     ?>
               <h3><?php echo $totalno; ?></h3>
 
-              <p>CV'S/Resume</p>
+              <p>CV'S/Hồ sơ xin việc</p>
             </div>
             <div class="icon">
               <i class="ion ion-ios-list"></i>
@@ -321,7 +321,7 @@ require_once("db.php");
                     ?>
               <h3><?php echo $totalno; ?></h3>
 
-              <p>Daily Users</p>
+              <p>Người dùng hàng ngày</p>
             </div>
             <div class="icon">
               <i class="ion ion-person-stalker"></i>
@@ -337,7 +337,7 @@ require_once("db.php");
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center latest-job margin-bottom-20">
-            <h1>About US</h1>                      
+            <h1>Thông tin về chúng tôi</h1>                      
           </div>
         </div>
         <div class="row">
@@ -345,13 +345,7 @@ require_once("db.php");
             <img src="img/browse.jpg" class="img-responsive">
           </div>
           <div class="col-md-6 about-text margin-bottom-20">
-            <p>The online job portal application allows job seekers and recruiters to connect.The application provides the ability for job seekers to create their accounts, upload their profile and resume, search for jobs, apply for jobs, view different job openings. The application provides the ability for companies to create their accounts, search candidates, create job postings, and view candidates applications.
-            </p>
-            <p>
-              This website is used to provide a platform for potential candidates to get their dream job and excel in yheir career.
-              This site can be used as a paving path for both companies and job-seekers for a better life .
-              
-            </p>
+          
 
           </div>
         </div>
@@ -363,8 +357,7 @@ require_once("db.php");
 
   <footer class="main-footer" style="margin-left: 0px;">
     <div class="text-center">
-      <strong>Copyright &copy; 2016-2017 <a href="jonsnow.netai.net">Job Portal</a>.</strong> All rights
-    reserved.
+    
     </div>
   </footer>
 

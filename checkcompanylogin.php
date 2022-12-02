@@ -26,11 +26,11 @@ if(isset($_POST)) {
 		while($row = $result->fetch_assoc()) {
 
 			if($row['active'] == '2') {
-				$_SESSION['companyLoginError'] = "Your Account Is Still Pending Approval By Admin.";
+				$_SESSION['companyLoginError'] = "Tài khoản của bạn vẫn đang được quản trị viên phê duyệt.";
 				header("Location: login-company.php");
 				exit();
 			} else if($row['active'] == '0') {
-				$_SESSION['companyLoginError'] = "Your Account Is Rejected. Please Contact Admin For More Info.";
+				$_SESSION['companyLoginError'] = "Tài khoản của bạn bị từ chối. Vui lòng liên hệ với quản trị viên để biết thêm thông tin.";
 				header("Location: login-company.php");
 				exit();
 			} else if($row['active'] == '1') {
@@ -43,7 +43,7 @@ if(isset($_POST)) {
 				header("Location: company/index.php");
 				exit();
 			} else if($row['active'] == '3') {
-				$_SESSION['companyLoginError'] = "Your Account Is Deactivated. Contact Admin For Reactivation.";
+				$_SESSION['companyLoginError'] = "Tài khoản của bạn bị vô hiệu hóa. Liên hệ với quản trị viên để kích hoạt lại.";
 				header("Location: login-company.php");
 				exit();
 			}

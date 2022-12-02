@@ -12,7 +12,7 @@ if(isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Job Portal</title>
+  <title>Nhà tuyển dụng</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -39,11 +39,11 @@ if(isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="index.php"><b>Job</b> Portal</a>
+    <a href="index.php"><b>Tìm kiếm</b> Ứng viên</a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Company Login</p>
+    <p class="login-box-msg">Đăng nhập với tư cách công ty</p>
 
     <form method="post" action="checkcompanylogin.php">
       <div class="form-group has-feedback">
@@ -51,7 +51,7 @@ if(isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" name="password" class="form-control" placeholder="Password">
+        <input type="password" name="password" class="form-control" placeholder="Mật khẩu">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
@@ -60,7 +60,7 @@ if(isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Đăng nhập</button>
         </div>
         <!-- /.col -->
         <div class="col-xs-12">
@@ -70,7 +70,7 @@ if(isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
               if(isset($_SESSION['registerCompleted'])) {
                 ?>
                 <div>
-                  <p class="text-center">You Have Registered Successfully! Your Account Approval Is Pending By Admin</p>
+                  <p class="text-center">Bạn đã đăng ký thành công! Quản trị viên đang chờ phê duyệt tài khoản của bạn</p>
                 </div>
               <?php
                unset($_SESSION['registerCompleted']); }
@@ -80,7 +80,7 @@ if(isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
               if(isset($_SESSION['loginError'])) {
                 ?>
                 <div>
-                  <p class="text-center">Invalid Email/Password! Try Again!</p>
+                  <p class="text-center">Email hoặc mật khẩu không hợp lệ! Hãy thử lại!</p>
                 </div>
               <?php
                unset($_SESSION['loginError']); }

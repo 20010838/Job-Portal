@@ -83,15 +83,15 @@ require_once("../db.php");
               </div>
               <div class="box-body no-padding">
                 <ul class="nav nav-pills nav-stacked">
-                  <li><a href="index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-                  <li><a href="edit-company.php"><i class="fa fa-tv"></i> My Company</a></li>
-                  <li><a href="create-job-post.php"><i class="fa fa-file-o"></i> Create Job Post</a></li>
-                  <li class="active"><a href="my-job-post.php"><i class="fa fa-file-o"></i> My Job Post</a></li>
-                  <li><a href="job-applications.php"><i class="fa fa-file-o"></i> Job Application</a></li>
-                  <li><a href="mailbox.php"><i class="fa fa-envelope"></i> Mailbox</a></li>
-                  <li><a href="settings.php"><i class="fa fa-gear"></i> Settings</a></li>
-                  <li><a href="resume-database.php"><i class="fa fa-user"></i> Resume Database</a></li>
-                  <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Logout</a></li>
+                  <li><a href="index.php"><i class="fa fa-dashboard"></i> Bảng điều khiển</a></li>
+                  <li><a href="edit-company.php"><i class="fa fa-tv"></i> Công ty của tôi</a></li>
+                  <li><a href="create-job-post.php"><i class="fa fa-file-o"></i> Tạo bài đăng tuyển dụng</a></li>
+                  <li class="active"><a href="my-job-post.php"><i class="fa fa-file-o"></i> Bài đăng của tôi</a></li>
+                  <li><a href="job-applications.php"><i class="fa fa-file-o"></i> Đơn xin việc</a></li>
+                  <li><a href="mailbox.php"><i class="fa fa-envelope"></i> Hộp thư</a></li>
+                  <li><a href="settings.php"><i class="fa fa-gear"></i> Cài đặt</a></li>
+                  <li><a href="resume-database.php"><i class="fa fa-user"></i> Hồ sơ ứng viên</a></li>
+                  <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Đăng xuất</a></li>
                 </ul>
               </div>
             </div>
@@ -112,12 +112,12 @@ require_once("../db.php");
                   <h2><b><i><?php echo $row['jobtitle']; ?></i></b></h2>
                 </div>
                 <div class="pull-right">
-                  <a href="my-job-post.php" class="btn btn-default btn-lg btn-flat margin-top-20"><i class="fa fa-arrow-circle-left"></i> Back</a>
+                  <a href="my-job-post.php" class="btn btn-default btn-lg btn-flat margin-top-20"><i class="fa fa-arrow-circle-left"></i> Thoát</a>
                 </div>
                 <div class="clearfix"></div>
                 <hr>
                 <div>
-                  <p><span class="margin-right-10"><i class="fa fa-location-arrow text-green"></i> <?php echo $row['experience']; ?> Years Experience</span> <i class="fa fa-calendar text-green"></i> <?php echo date("d-M-Y", strtotime($row['createdat'])); ?></p>              
+                  <p><span class="margin-right-10"><i class="fa fa-location-arrow text-green"></i> <?php echo $row['experience']; ?> Năm kinh nghiệm</span> <i class="fa fa-calendar text-green"></i>  <span class="attachment-heading pull-right">->VNĐ<?php echo number_format($row['maximumsalary'],0,'','.'); ?>/Tháng</span> <span class="attachment-heading pull-right"><?php echo number_format($row['minimumsalary'],0,'','.'); ?>/Tháng</span> <?php echo date("d-M-Y", strtotime($row['createdat'])); ?></p>              
                 </div>
                 <div>
                   <?php echo stripcslashes($row['description']); ?>
@@ -143,10 +143,7 @@ require_once("../db.php");
   <!-- /.content-wrapper -->
 
   <footer class="main-footer" style="margin-left: 0px;">
-    <div class="text-center">
-      <strong>Copyright &copy; 2016-2017 <a href="jonsnow.netai.net">Job Portal</a>.</strong> All rights
-    reserved.
-    </div>
+    
   </footer>
 
   <!-- /.control-sidebar -->

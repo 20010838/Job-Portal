@@ -16,7 +16,7 @@ require_once("../db.php");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Job Portal</title>
+  <title>Tuyển dụng</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -57,7 +57,7 @@ require_once("../db.php");
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>J</b>P</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Job</b> Portal</span>
+      <span class="logo-lg"><b>Tuyển</b> Dụng</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -84,44 +84,44 @@ require_once("../db.php");
               </div>
               <div class="box-body no-padding">
                 <ul class="nav nav-pills nav-stacked">
-                  <li><a href="index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-                  <li><a href="edit-company.php"><i class="fa fa-tv"></i> My Company</a></li>
-                  <li class="active"><a href="create-job-post.php"><i class="fa fa-file-o"></i> Create Job Post</a></li>
-                  <li><a href="my-job-post.php"><i class="fa fa-file-o"></i> My Job Post</a></li>
-                  <li><a href="job-applications.php"><i class="fa fa-file-o"></i> Job Application</a></li>
-                  <li><a href="mailbox.php"><i class="fa fa-envelope"></i> Mailbox</a></li>
-                  <li><a href="settings.php"><i class="fa fa-gear"></i> Settings</a></li>
-                  <li><a href="resume-database.php"><i class="fa fa-user"></i> Resume Database</a></li>
-                  <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Logout</a></li>
+                  <li><a href="index.php"><i class="fa fa-dashboard"></i> Bảng điều khiển</a></li>
+                  <li><a href="edit-company.php"><i class="fa fa-tv"></i> Công ty của tôi</a></li>
+                  <li class="active"><a href="create-job-post.php"><i class="fa fa-file-o"></i> Tạo bài đăng tuyển dụng</a></li>
+                  <li><a href="my-job-post.php"><i class="fa fa-file-o"></i> Bài đăng của tôi</a></li>
+                  <li><a href="job-applications.php"><i class="fa fa-file-o"></i> Đơn xin việc</a></li>
+                  <li><a href="mailbox.php"><i class="fa fa-envelope"></i> Hộp thư</a></li>
+                  <li><a href="settings.php"><i class="fa fa-gear"></i> Cài đặt</a></li>
+                  <li><a href="resume-database.php"><i class="fa fa-user"></i>Hồ sơ ứng viên</a></li>
+                  <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Đăng xuất</a></li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="col-md-9 bg-white padding-2">
-            <h2><i>Create Job Post</i></h2>
+            <h2><i>Tạo bài đăng tuyển dụng</i></h2>
             <div class="row">
               <form method="post" action="addpost.php">
                 <div class="col-md-12 latest-job ">
                   <div class="form-group">
-                    <input class="form-control input-lg" type="text" id="jobtitle" name="jobtitle" placeholder="Job Title">
+                    <input class="form-control input-lg" type="text" id="jobtitle" name="jobtitle" placeholder="Tên công việc">
                   </div>
                   <div class="form-group">
-                    <textarea class="form-control input-lg" id="description" name="description" placeholder="Job Description"></textarea>
+                    <textarea class="form-control input-lg" id="description" name="description" placeholder="Mô tả công việc"></textarea>
                   </div>
                   <div class="form-group">
-                    <input type="number" class="form-control  input-lg" id="minimumsalary" min="1000" max="1000000" autocomplete="off" name="minimumsalary" placeholder="Minimum Salary" required="">
+                    <input type="number" class="form-control  input-lg" id="minimumsalary" min="1000000" step="500000" autocomplete="off" name="minimumsalary" placeholder="Lương tối thiểu" required="">
                   </div>
                   <div class="form-group">
-                    <input type="number" class="form-control  input-lg" id="maximumsalary" name="maximumsalary" min="1000" max="1000000" placeholder="Maximum Salary" required="">
+                    <input type="number" class="form-control  input-lg" id="maximumsalary" name="maximumsalary" min="1000000" step="500000" placeholder="Lương tối đa" required="">
                   </div>
                   <div class="form-group">
-                <input type="number" class="form-control  input-lg" id="experience" autocomplete="off" name="experience" placeholder="Experience (in Years) Required" required="">
+                <input type="number" class="form-control  input-lg" id="experience" autocomplete="off" name="experience" placeholder="Kinh nghiệm (tính theo năm) Yêu cầu" required="">
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control  input-lg" id="qualification" name="qualification" placeholder="Qualification Required" required="">
+                    <input type="text" class="form-control  input-lg" id="qualification" name="qualification" placeholder="Yêu cầu bằng cấp" required="">
                   </div>
                   <div class="form-group">
-                    <button type="submit" class="btn btn-flat btn-success">Create</button>
+                    <button type="submit" class="btn btn-flat btn-success">Tạo</button>
                   </div>
                 </div>
               </form>
@@ -139,8 +139,7 @@ require_once("../db.php");
 
   <footer class="main-footer" style="margin-left: 0px;">
     <div class="text-center">
-      <strong>Copyright &copy; 2016-2017 <a href="jonsnow.netai.net">Job Portal</a>.</strong> All rights
-    reserved.
+    
     </div>
   </footer>
 

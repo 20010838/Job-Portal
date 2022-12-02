@@ -14,7 +14,7 @@ require_once("../db.php");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Job Portal</title>
+  <title>Admin</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -49,7 +49,7 @@ require_once("../db.php");
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>J</b>P</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Job</b> Portal</span>
+      <span class="logo-lg"><b>Ad</b>min</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -76,24 +76,24 @@ require_once("../db.php");
               </div>
               <div class="box-body no-padding">
                 <ul class="nav nav-pills nav-stacked">
-                  <li class="active"><a href="dashboard.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-                  <li><a href="active-jobs.php"><i class="fa fa-briefcase"></i> Active Jobs</a></li>
-                  <li><a href="applications.php"><i class="fa fa-address-card-o"></i> Applications</a></li>
-                  <li><a href="companies.php"><i class="fa fa-building"></i> Companies</a></li>
-                  <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Logout</a></li>
+                <li class="active"><a href="dashboard.php"><i class="fa fa-dashboard"></i> Bảng diều khiển</a></li>
+                  <li><a href="active-jobs.php"><i class="fa fa-briefcase"></i> Việc làm đang hoạt động</a></li>
+                  <li><a href="applications.php"><i class="fa fa-address-card-o"></i> Đơn xin việc</a></li>
+                  <li><a href="companies.php"><i class="fa fa-building"></i> Các công ty</a></li>
+                  <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Đăng xuất</a></li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="col-md-9 bg-white padding-2">
 
-            <h3>Job Portal Statistics</h3>
+            <h3>Thống kê</h3>
             <div class="row">
               <div class="col-md-6">
                 <div class="info-box bg-c-yellow">
                   <span class="info-box-icon bg-red"><i class="ion ion-briefcase"></i></span>
                   <div class="info-box-content">
-                    <span class="info-box-text">Active Company Registered</span>
+                    <span class="info-box-text">Công ty đang hoạt động đã đăng ký</span>
                     <?php
                       $sql = "SELECT * FROM company WHERE active='1'";
                       $result = $conn->query($sql);
@@ -111,7 +111,7 @@ require_once("../db.php");
                 <div class="info-box bg-c-yellow">
                   <span class="info-box-icon bg-red"><i class="ion ion-briefcase"></i></span>
                   <div class="info-box-content">
-                    <span class="info-box-text">Pending Company Approval</span>
+                    <span class="info-box-text">Công ty đang chờ phê duyệt</span>
                     <?php
                       $sql = "SELECT * FROM company WHERE active='2'";
                       $result = $conn->query($sql);
@@ -130,7 +130,7 @@ require_once("../db.php");
                 <div class="info-box bg-c-yellow">
                   <span class="info-box-icon bg-green"><i class="ion ion-person-stalker"></i></span>
                   <div class="info-box-content">
-                    <span class="info-box-text">Registered Candidates</span>
+                    <span class="info-box-text">Ứng viên đã đăng ký</span>
                     <?php
                       $sql = "SELECT * FROM users WHERE active='1'";
                       $result = $conn->query($sql);
@@ -148,7 +148,7 @@ require_once("../db.php");
                 <div class="info-box bg-c-yellow">
                   <span class="info-box-icon bg-green"><i class="ion ion-person-stalker"></i></span>
                   <div class="info-box-content">
-                    <span class="info-box-text">Pending Candidates Confirmation</span>
+                    <span class="info-box-text">Xác nhận ứng viên đang chờ xử lý</span>
                     <?php
                       $sql = "SELECT * FROM users WHERE active='0'";
                       $result = $conn->query($sql);
@@ -166,7 +166,7 @@ require_once("../db.php");
                 <div class="info-box bg-c-yellow">
                   <span class="info-box-icon bg-aqua"><i class="ion ion-person-add"></i></span>
                   <div class="info-box-content">
-                    <span class="info-box-text">Total Job Posts</span>
+                    <span class="info-box-text">Tổng số bài đăng tuyển dụng</span>
                     <?php
                       $sql = "SELECT * FROM job_post";
                       $result = $conn->query($sql);
@@ -184,7 +184,7 @@ require_once("../db.php");
                 <div class="info-box bg-c-yellow">
                   <span class="info-box-icon bg-yellow"><i class="ion ion-ios-browsers"></i></span>
                   <div class="info-box-content">
-                    <span class="info-box-text">Total Applications</span>
+                    <span class="info-box-text">Tổng số đơn xin việc</span>
                     <?php
                       $sql = "SELECT * FROM apply_job_post";
                       $result = $conn->query($sql);
@@ -212,8 +212,7 @@ require_once("../db.php");
 
   <footer class="main-footer" style="margin-left: 0px;">
     <div class="text-center">
-      <strong>Copyright &copy; 2016-2017 <a href="jonsnow.netai.net">Job Portal</a>.</strong> All rights
-    reserved.
+      
     </div>
   </footer>
 

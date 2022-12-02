@@ -96,12 +96,12 @@ if($result->num_rows > 0)
               <h2><b><i><?php echo $row['jobtitle']; ?></i></b></h2>
             </div>
             <div class="pull-right">
-              <a href="index.php" class="btn btn-default btn-lg btn-flat margin-top-20"><i class="fa fa-arrow-circle-left"></i> Back</a>
+              <a href="index.php" class="btn btn-default btn-lg btn-flat margin-top-20"><i class="fa fa-arrow-circle-left"></i> Thoát</a>
             </div>
             <div class="clearfix"></div>
             <hr>
             <div>
-              <p><span class="margin-right-10"><i class="fa fa-location-arrow text-green"></i> <?php echo $row['city']; ?></span> <i class="fa fa-calendar text-green"></i> <?php echo date("d-M-Y", strtotime($row['createdat'])); ?></p>              
+              <p><span class="margin-right-10"><i class="fa fa-location-arrow text-green"></i> <?php echo $row['state']; ?></span> <i class="fa fa-calendar text-green"></i> <?php echo date("d-M-Y", strtotime($row['createdat'])); ?></p>              
             </div>
             <div>
               <?php echo stripcslashes($row['description']); ?>
@@ -114,11 +114,11 @@ if($result->num_rows > 0)
               <img src="../uploads/logo/<?php echo $row['logo']; ?>" alt="companylogo">
               <div class="caption text-center">
                 <h3><?php echo $row['companyname']; ?></h3>
-                <p><a href="#" class="btn btn-primary btn-flat" role="button">More Info</a>
+                <p><a href="#" class="btn btn-primary btn-flat" role="button">Thông tin thêm</a>
                 <hr>
                 <div class="row">
-                  <div class="col-md-4"><a href=""><i class="fa fa-warning"></i> Report</a></div>
-                  <div class="col-md-4"><a href=""><i class="fa fa-envelope"></i> Email</a></div>
+                  <div class="col-md-4"><a href=""><i class="fa fa-warning"></i> Báo cáo</a></div>
+                  <div class="col-md-4"><a href="mailbox.php"><i class="fa fa-envelope"></i> Email</a></div>
                 </div>
               </div>
             </div>
@@ -134,8 +134,7 @@ if($result->num_rows > 0)
 
   <footer class="main-footer" style="margin-left: 0px;">
     <div class="text-center">
-      <strong>Copyright &copy; 2016-2017 <a href="jonsnow.netai.net">Job Portal</a>.</strong> All rights
-    reserved.
+   
     </div>
   </footer>
 

@@ -16,7 +16,7 @@ require_once("../db.php");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Job Portal</title>
+  <title>Tìm kiếm công việc</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -56,7 +56,7 @@ require_once("../db.php");
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>J</b>P</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Job</b> Portal</span>
+      <span class="logo-lg"><b>Tìm</b> Việc</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -83,12 +83,12 @@ require_once("../db.php");
               </div>
               <div class="box-body no-padding">
                 <ul class="nav nav-pills nav-stacked">
-                  <li><a href="edit-profile.php"><i class="fa fa-user"></i> Edit Profile</a></li>
-                  <li><a href="index.php"><i class="fa fa-address-card-o"></i> My Applications</a></li>
-                  <li><a href="../jobs.php"><i class="fa fa-list-ul"></i> Jobs</a></li>
-                  <li class="active"><a href="mailbox.php"><i class="fa fa-envelope"></i> Mailbox</a></li>
-                  <li><a href="settings.php"><i class="fa fa-gear"></i> Settings</a></li>
-                  <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Logout</a></li>
+                  <li><a href="edit-profile.php"><i class="fa fa-user"></i> Chỉnh sửa hồ sơ</a></li>
+                  <li><a href="index.php"><i class="fa fa-address-card-o"></i> Đơn xin việc của tôi</a></li>
+                  <li><a href="../jobs.php"><i class="fa fa-list-ul"></i> Công việc</a></li>
+                  <li class="active"><a href="mailbox.php"><i class="fa fa-envelope"></i> Hộp thư</a></li>
+                  <li><a href="settings.php"><i class="fa fa-gear"></i> Cài đặt</a></li>
+                  <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Đăng xuất</a></li>
                 </ul>
               </div>
             </div>
@@ -97,7 +97,7 @@ require_once("../db.php");
           <form action="add-mail.php" method="post">
             <div class="box box-primary">
               <div class="box-header with-border">
-                <h3 class="box-title">Compose New Message</h3>
+                <h3 class="box-title">Soạn tin nhắn mới</h3>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
@@ -115,18 +115,18 @@ require_once("../db.php");
                   </select>
                 </div>
                 <div class="form-group">
-                  <input class="form-control" name="subject" placeholder="Subject:">
+                  <input class="form-control" name="subject" placeholder="Chủ đề:">
                 </div>
                 <div class="form-group">
-                  <textarea class="form-control input-lg" id="description" name="description" placeholder="Job Description"></textarea>
+                  <textarea class="form-control input-lg" id="description" name="description" placeholder="Mô tả"></textarea>
                 </div>
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
                 <div class="pull-right">
-                  <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Send</button>
+                  <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Gửi</button>
                 </div>
-                <a href="mailbox.php" class="btn btn-default"><i class="fa fa-times"></i> Discard</a>
+                <a href="mailbox.php" class="btn btn-default"><i class="fa fa-times"></i> Bỏ</a>
               </div>
               <!-- /.box-footer -->
             </div>
@@ -143,8 +143,7 @@ require_once("../db.php");
 
   <footer class="main-footer" style="margin-left: 0px;">
     <div class="text-center">
-      <strong>Copyright &copy; 2016-2017 <a href="jonsnow.netai.net">Job Portal</a>.</strong> All rights
-    reserved.
+    
     </div>
   </footer>
 

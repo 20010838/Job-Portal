@@ -14,7 +14,7 @@ require_once("../db.php");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Job Portal</title>
+  <title>Admin</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -51,7 +51,7 @@ require_once("../db.php");
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>J</b>P</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Job</b> Portal</span>
+      <span class="logo-lg"><b>Ad</b>min</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -78,29 +78,29 @@ require_once("../db.php");
               </div>
               <div class="box-body no-padding">
                 <ul class="nav nav-pills nav-stacked">
-                  <li><a href="dashboard.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-                  <li><a href="active-jobs.php"><i class="fa fa-briefcase"></i> Active Jobs</a></li>
-                  <li class="active"><a href="applications.php"><i class="fa fa-address-card-o"></i> Candidates</a></li>
-                  <li><a href="companies.php"><i class="fa fa-building"></i> Companies</a></li>
-                  <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Logout</a></li>
+                <li><a href="dashboard.php"><i class="fa fa-dashboard"></i> Bảng điều khiển</a></li>
+                  <li><a href="active-jobs.php"><i class="fa fa-briefcase"></i> Việc làm đang hoạt động</a></li>
+                  <li class="active"><a href="applications.php"><i class="fa fa-address-card-o"></i> Đơn xin việc</a></li>
+                  <li><a href="companies.php"><i class="fa fa-building"></i> Các công ty</a></li>
+                  <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Đăng xuất</a></li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="col-md-9 bg-white padding-2">
 
-            <h3>Candidates Database</h3>
+            <h3>Cơ sở dữ liệu ứng viên</h3>
             <div class="row margin-top-20">
               <div class="col-md-12">
                 <div class="box-body table-responsive no-padding">
                   <table id="example2" class="table table-hover">
                     <thead>
-                      <th>Candidate</th>
-                      <th>Highest Qualification</th>
-                      <th>Skills</th>
-                      <th>City</th>
-                      <th>State</th>
-                      <th>Download Resume</th>
+                      <th>Ứng viên</th>
+                      <th>Bằng cấp</th>
+                      <th>Kỹ năng</th>
+                      <th>Thành phố</th>
+                   
+                      <th>Tải hồ sơ cá nhân</th>
                     </thead>
                     <tbody>
                       <?php
@@ -125,11 +125,11 @@ require_once("../db.php");
                           ?>
                         </td>
                         <td><?php echo $row['city']; ?></td>
-                        <td><?php echo $row['state']; ?></td>
+                        
                         <?php if($row['resume'] != '') { ?>
                         <td><a href="../uploads/resume/<?php echo $row['resume']; ?>" download="<?php echo $row['firstname'].' Resume'; ?>"><i class="fa fa-file-pdf-o"></i></a></td>
                         <?php } else { ?>
-                        <td>No Resume Uploaded</td>
+                        <td>Không hồ sơ nào được tải lên</td>
                         <?php } ?>
                       </tr>
 
@@ -195,8 +195,7 @@ require_once("../db.php");
 
   <footer class="main-footer" style="margin-left: 0px;">
     <div class="text-center">
-      <strong>Copyright &copy; 2016-2017 <a href="jonsnow.netai.net">Job Portal</a>.</strong> All rights
-    reserved.
+      
     </div>
   </footer>
 

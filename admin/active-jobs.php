@@ -14,7 +14,7 @@ require_once("../db.php");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Job Portal</title>
+  <title>Admin</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -51,7 +51,7 @@ require_once("../db.php");
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>J</b>P</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Job</b> Portal</span>
+      <span class="logo-lg"><b>Ad</b>min</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -78,28 +78,28 @@ require_once("../db.php");
               </div>
               <div class="box-body no-padding">
                 <ul class="nav nav-pills nav-stacked">
-                  <li><a href="dashboard.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-                  <li class="active"><a href="active-jobs.php"><i class="fa fa-briefcase"></i> Active Jobs</a></li>
-                  <li><a href="applications.php"><i class="fa fa-address-card-o"></i> Applications</a></li>
-                  <li><a href="companies.php"><i class="fa fa-building"></i> Companies</a></li>
-                  <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Logout</a></li>
+                  <li><a href="dashboard.php"><i class="fa fa-dashboard"></i> Bảng diều khiển</a></li>
+                  <li class="active"><a href="active-jobs.php"><i class="fa fa-briefcase"></i> Việc làm đang hoạt động</a></li>
+                  <li><a href="applications.php"><i class="fa fa-address-card-o"></i> Đơn xin việc</a></li>
+                  <li><a href="companies.php"><i class="fa fa-building"></i> Các công ty</a></li>
+                  <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Đăng xuất</a></li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="col-md-9 bg-white padding-2">
 
-            <h3>Active Job Posts</h3>
+            <h3>Bài đăng việc làm đang hoạt động</h3>
             <div class="row margin-top-20">
               <div class="col-md-12">
                 <div class="box-body table-responsive no-padding">
                   <table id="example2" class="table table-hover">
                     <thead>
-                      <th>Job Name</th>
-                      <th>Company Name</th>
-                      <th>Date Created</th>
-                      <th>View</th>
-                      <th>Delete</th>
+                      <th>Tên công việc</th>
+                      <th>Tên công ty</th>
+                      <th>Thời gian tạo</th>
+                      <th>Xem</th>
+                      <th>Xóa</th>
                     </thead>
                     <tbody>
                       <?php
@@ -137,30 +137,9 @@ require_once("../db.php");
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Job Title</h4>
+            <h4 class="modal-title">Tên công việc</h4>
           </div>
-          <div class="modal-body">
-              <h3><b>Created On</b></h3>
-              <p>24/04/2017</p>
-              <br>              
-              <h3><b>Company Name</b></h3>
-              <p>XYX Private Limited</p>
-              <br>
-              <h3><b>Company Email</b></h3>
-              <p>test@test.com</p>
-              <br>
-              <h3><b>Location</b></h3>
-              <p>India</p>
-              <br>
-              <h3><b>Application Message</b></h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          <div class="modal-footer">
+                  <div class="modal-footer">
             <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
           </div>
         </div>
@@ -176,8 +155,7 @@ require_once("../db.php");
 
   <footer class="main-footer" style="margin-left: 0px;">
     <div class="text-center">
-      <strong>Copyright &copy; 2016-2017 <a href="jonsnow.netai.net">Job Portal</a>.</strong> All rights
-    reserved.
+     
     </div>
   </footer>
 

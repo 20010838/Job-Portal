@@ -48,7 +48,7 @@ require_once("db.php");
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>J</b>P</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Job</b> Portal</span>
+      <span class="logo-lg"><b>Cổng</b> Việc làm</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -61,27 +61,27 @@ require_once("db.php");
           </li>
           <?php if(empty($_SESSION['id_user']) && empty($_SESSION['id_company'])) { ?>
           <li>
-            <a href="login.php">Login</a>
+            <a href="login.php">Đăng nhập</a>
           </li>
           <li>
-            <a href="sign-up.php">Sign Up</a>
+            <a href="sign-up.php">Đăng ký</a>
           </li>  
           <?php } else { 
 
             if(isset($_SESSION['id_user'])) { 
           ?>        
           <li>
-            <a href="user/index.php">Dashboard</a>
+            <a href="user/index.php">Bảng điều khiển</a>
           </li>
           <?php
           } else if(isset($_SESSION['id_company'])) { 
           ?>        
           <li>
-            <a href="company/index.php">Dashboard</a>
+            <a href="company/index.php">Bảng điều khiển</a>
           </li>
           <?php } ?>
           <li>
-            <a href="logout.php">Logout</a>
+            <a href="logout.php">Đăng xuất</a>
           </li>
           <?php } ?>          
         </ul>
@@ -92,39 +92,39 @@ require_once("db.php");
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper" style="margin-left: 0px;">
 
-    <section class="content-header">
+   <section class="content-header">
       <div class="container">
         <div class="row latest-job margin-top-50 margin-bottom-20 bg-white">
-          <h1 class="text-center margin-bottom-20">CREATE COMPANY PROFILE</h1>
+          <h1 class="text-center margin-bottom-20">Tạo hồ sơ công ty</h1>
           <form method="post" id="registerCompanies" action="addcompany.php" enctype="multipart/form-data">
             <div class="col-md-6 latest-job ">
               <div class="form-group">
                 <input class="form-control input-lg" type="text" name="name" placeholder="Full Name" required>
               </div>
               <div class="form-group">
-                <input class="form-control input-lg" type="text" name="companyname" placeholder="Company Name" required>
+                <input class="form-control input-lg" type="text" name="companyname" placeholder="Tên công ty" required>
               </div>
               <div class="form-group">
                 <input class="form-control input-lg" type="text" name="website" placeholder="Website">
               </div>
               <div class="form-group">
-                <input class="form-control input-lg" type="text" name="email" placeholder="Email" required>
+                <input class="form-control input-lg" type="email" name="email" placeholder="Email" required>
               </div>
               <div class="form-group">
-                <textarea class="form-control input-lg" rows="4" name="aboutme" placeholder="Brief info about your company"></textarea>
+                <textarea class="form-control input-lg" rows="4" name="aboutme" placeholder="Giới thiệu sơ qua về công ty"></textarea>
               </div>
               <div class="form-group checkbox">
                 <label><input type="checkbox" required> I accept terms & conditions</label>
               </div>
               <div class="form-group">
-                <button type="submit" class="btn btn-flat btn-success">Register</button>
+                <button type="submit" class="btn btn-flat btn-success">Đăng ký</button>
               </div>
               <?php 
               //If Company already registered with this email then show error message.
               if(isset($_SESSION['registerError'])) {
                 ?>
                 <div>
-                  <p class="text-center" style="color: red;">Email Already Exists! Choose A Different Email!</p>
+                  <p class="text-center" style="color: red;">Email đã tồn tại,chọn email khác</p>
                 </div>
               <?php
                unset($_SESSION['registerError']); }
@@ -141,20 +141,20 @@ require_once("db.php");
             </div>
             <div class="col-md-6 latest-job ">
               <div class="form-group">
-                <input class="form-control input-lg" type="password" name="password" placeholder="Password" required>
+                <input class="form-control input-lg" type="password" name="password" placeholder="Mật khẩu" required>
               </div>
               <div class="form-group">
-                <input class="form-control input-lg" type="password" name="cpassword" placeholder="Confirm Password" required>
+                <input class="form-control input-lg" type="password" name="cpassword" placeholder="Xác nhận mật khẩu" required>
               </div>
                <div id="passwordError" class="btn btn-flat btn-danger hide-me" >
-                    Password Mismatch!! 
+                    Mật khẩu không khớp
                   </div>
               <div class="form-group">
-                <input class="form-control input-lg" type="text" name="contactno" placeholder="Phone Number" minlength="10" maxlength="10" autocomplete="off" onkeypress="return validatePhone(event);" required>
+                <input class="form-control input-lg" type="text" name="contactno" placeholder="SĐT" minlength="10" maxlength="10" autocomplete="off" onkeypress="return validatePhone(event);" required>
               </div>
               <div class="form-group">
                 <select class="form-control  input-lg" id="country" name="country" required>
-                <option selected="" value="">Select Country</option>
+                <option selected="" value="">Chọn Quốc Gia</option>
                 <?php
                   $sql="SELECT * FROM countries";
                   $result=$conn->query($sql);
@@ -170,16 +170,15 @@ require_once("db.php");
               </div>  
               <div id="stateDiv" class="form-group" style="display: none;">
                 <select class="form-control  input-lg" id="state" name="state" required>
-                  <option value="" selected="">Select State</option>
+                  <option value="" selected="">Chọn thành phố</option>
                 </select>
               </div>   
               <div id="cityDiv" class="form-group" style="display: none;">
-                <select class="form-control  input-lg" id="city" name="city" required>
-                  <option selected="">Select City</option>
-                </select>
+              
+              
               </div>
               <div class="form-group">
-                <label>Attach Company Logo</label>
+                <label>Đính kèm logo công ty</label>
                 <input type="file" name="image" class="form-control input-lg" required>
               </div>
             </div>
@@ -196,7 +195,7 @@ require_once("db.php");
 
   <footer class="main-footer" style="margin-left: 0px;">
     <div class="text-center">
-      <strong>Copyright &copy; 2016-2017 <a href="jonsnow.netai.net">Job Portal</a>.</strong> All rights
+      <strong>Copyright &copy; 2016-2017 <a href="learningfromscratch.online">Job Portal</a>.</strong> All rights
     reserved.
     </div>
   </footer>
@@ -217,23 +216,23 @@ require_once("db.php");
 <script src="js/adminlte.min.js"></script>
 
 <script type="text/javascript">
-      function validatePhone(event) {
+  function validatePhone(event) {
 
-        //event.keycode will return unicode for characters and numbers like a, b, c, 5 etc.
-        //event.which will return key for mouse events and other events like ctrl alt etc. 
-        var key = window.event ? event.keyCode : event.which;
+    //event.keycode will return unicode for characters and numbers like a, b, c, 5 etc.
+    //event.which will return key for mouse events and other events like ctrl alt etc. 
+    var key = window.event ? event.keyCode : event.which;
 
-        if(event.keyCode == 8 || event.keyCode == 46 || event.keyCode == 37 || event.keyCode == 39) {
-          // 8 means Backspace
-          //46 means Delete
-          // 37 means left arrow
-          // 39 means right arrow
-          return true;
-        } else if( key < 48 || key > 57 ) {
-          // 48-57 is 0-9 numbers on your keyboard.
-          return false;
-        } else return true;
-      }
+    if(event.keyCode == 8 || event.keyCode == 46 || event.keyCode == 37 || event.keyCode == 39) {
+      // 8 means Backspace
+      //46 means Delete
+      // 37 means left arrow
+      // 39 means right arrow
+      return true;
+    } else if( key < 48 || key > 57 ) {
+      // 48-57 is 0-9 numbers on your keyboard.
+      return false;
+    } else return true;
+  }
 </script>
 
 <script>

@@ -57,31 +57,31 @@ if(isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <li>
-            <a href="jobs.php">Jobs</a>
+            <a href="jobs.php">Công việc</a>
           </li>
           <?php if(empty($_SESSION['id_user']) && empty($_SESSION['id_company'])) { ?>
           <li>
-            <a href="login.php">Login</a>
+            <a href="login.php">Đăng nhập</a>
           </li>
           <li>
-            <a href="sign-up.php">Sign Up</a>
+            <a href="sign-up.php">Đăng ký</a>
           </li>  
           <?php } else { 
 
             if(isset($_SESSION['id_user'])) { 
           ?>        
           <li>
-            <a href="user/index.php">Dashboard</a>
+            <a href="user/index.php">Bảng điều khiển</a>
           </li>
           <?php
           } else if(isset($_SESSION['id_company'])) { 
           ?>        
           <li>
-            <a href="company/index.php">Dashboard</a>
+            <a href="company/index.php">Bảng điều khiển</a>
           </li>
           <?php } ?>
           <li>
-            <a href="logout.php">Logout</a>
+            <a href="logout.php">Đăng xuất</a>
           </li>
           <?php } ?>          
         </ul>
@@ -95,24 +95,24 @@ if(isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
     <section class="content-header">
       <div class="container">
         <div class="row latest-job margin-top-50 margin-bottom-20">
-          <h1 class="text-center margin-bottom-20">Sign Up</h1>
+          <h1 class="text-center margin-bottom-20">Đăng nhập</h1>
           <div class="col-md-6 latest-job ">
             <div class="small-box bg-yellow padding-5">
               <div class="inner">
-                <h3 class="text-center">Candidates Login</h3>
+                <h3 class="text-center">Với tư cách ứng viên</h3>
               </div>
               <a href="login-candidates.php" class="small-box-footer">
-                Login <i class="fa fa-arrow-circle-right"></i>
+                Đăng nhập <i class="fa fa-arrow-circle-right"></i>
               </a>
             </div>
           </div>
           <div class="col-md-6 latest-job ">
             <div class="small-box bg-red padding-5">
               <div class="inner">
-                <h3 class="text-center">Company Login</h3>
+                <h3 class="text-center">Với tư cách công ty</h3>
               </div>
               <a href="login-company.php" class="small-box-footer">
-                Login <i class="fa fa-arrow-circle-right"></i>
+                Đăng nhập <i class="fa fa-arrow-circle-right"></i>
               </a>
             </div>
           </div>
@@ -127,8 +127,7 @@ if(isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
 
   <footer class="main-footer" style="margin-left: 0px;">
     <div class="text-center">
-      <strong>Copyright &copy; 2016-2017 <a href="jonsnow.netai.net">Job Portal</a>.</strong> All rights
-    reserved.
+      
     </div>
   </footer>
 

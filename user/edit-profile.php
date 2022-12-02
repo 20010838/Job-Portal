@@ -16,7 +16,7 @@ require_once("../db.php");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Job Portal</title>
+  <title>Tìm kiếm việc làm</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -51,7 +51,7 @@ require_once("../db.php");
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>J</b>P</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Job</b> Portal</span>
+      <span class="logo-lg"><b>Tìm</b> Việc</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -60,7 +60,7 @@ require_once("../db.php");
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <li>
-            <a href="../jobs.php">Jobs</a>
+            <a href="../jobs.php">Công việc</a>
           </li>       
         </ul>
       </div>
@@ -80,18 +80,18 @@ require_once("../db.php");
               </div>
               <div class="box-body no-padding">
                 <ul class="nav nav-pills nav-stacked">
-                  <li class="active"><a href="edit-profile.php"><i class="fa fa-user"></i> Edit Profile</a></li>
-                  <li><a href="index.php"><i class="fa fa-address-card-o"></i> My Applications</a></li>
-                  <li><a href="../jobs.php"><i class="fa fa-list-ul"></i> Jobs</a></li>
-                  <li><a href="mailbox.php"><i class="fa fa-envelope"></i> Mailbox</a></li>
-                  <li><a href="settings.php"><i class="fa fa-gear"></i> Settings</a></li>
-                  <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Logout</a></li>
+                  <li class="active"><a href="edit-profile.php"><i class="fa fa-user"></i> Chỉnh sửa hồ sơ</a></li>
+                  <li><a href="index.php"><i class="fa fa-address-card-o"></i> Đơn xin việc của tôi</a></li>
+                  <li><a href="../jobs.php"><i class="fa fa-list-ul"></i> Công việc</a></li>
+                  <li><a href="mailbox.php"><i class="fa fa-envelope"></i>Hộp thư</a></li>
+                  <li><a href="settings.php"><i class="fa fa-gear"></i> Cài đặt</a></li>
+                  <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Đăng xuất</a></li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="col-md-9 bg-white padding-2">
-            <h2><i>Edit Profile</i></h2>
+            <h2><i>Chỉnh sửa hồ sơ</i></h2>
             <form action="update-profile.php" method="post" enctype="multipart/form-data">
             <?php
             //Sql to get logged in user details.
@@ -113,48 +113,42 @@ require_once("../db.php");
                     <input type="text" class="form-control input-lg" id="lname" name="lname" placeholder="Last Name" onkeypress="return validateName(event);" value="<?php echo $row['lastname']; ?>" required="">
                   </div>
                   <div class="form-group">
-                    <label for="email">Email address</label>
+                    <label for="email">Email</label>
                     <input type="email" class="form-control input-lg" id="email" placeholder="Email" value="<?php echo $row['email']; ?>" readonly>
                   </div>
                   <div class="form-group">
-                    <label for="address">Address</label>
+                    <label for="address">Địa chỉ</label>
                     <textarea id="address" name="address" class="form-control input-lg" rows="5" placeholder="Address"><?php echo $row['address']; ?></textarea>
                   </div>
                   <div class="form-group">
-                    <label for="city">City</label>
+                    <label for="city">Thành phố</label>
                     <input type="text" class="form-control input-lg" id="city" name="city" onkeypress="return validateName(event);" value="<?php echo $row['city']; ?>" placeholder="city">
                   </div>
+                  
                   <div class="form-group">
-                    <label for="state">State</label>
-                    <input type="text" class="form-control input-lg" id="state" name="state"  placeholder="state" onkeypress="return validateName(event);" value="<?php echo $row['state']; ?>">
-                  </div>
-                  <div class="form-group">
-                    <button type="submit" class="btn btn-flat btn-success">Update Profile</button>
+                    <button type="submit" class="btn btn-flat btn-success">Cập nhật hồ sơ</button>
                   </div>
                 </div>
                 <div class="col-md-6 latest-job ">
                   <div class="form-group">
-                    <label for="contactno">Contact Number</label>
+                    <label for="contactno">SĐT liên lạc</label>
                     <input type="text" class="form-control input-lg" id="contactno" name="contactno" placeholder="Contact Number" onkeypress="return validatePhone(event);" maxlength="10" minlength="10" value="<?php echo $row['contactno']; ?>">
                   </div>
                   <div class="form-group">
-                    <label for="qualification">Highest Qualification</label>
+                    <label for="qualification">Bằng cấp</label>
                     <input type="text" class="form-control input-lg" id="qualification" name="qualification" placeholder="Highest Qualification" value="<?php echo $row['qualification']; ?>">
                   </div>
+                  
                   <div class="form-group">
-                    <label for="stream">Stream</label>
-                    <input type="text" class="form-control input-lg" id="stream" name="stream" placeholder="stream" value="<?php echo $row['stream']; ?>">
-                  </div>
-                  <div class="form-group">
-                    <label>Skills</label>
+                    <label>Kỹ năng</label>
                     <textarea class="form-control input-lg" rows="4" name="skills" onkeypress="return validateName(event);" ><?php echo $row['skills']; ?></textarea>
                   </div>
                   <div class="form-group">
-                    <label>About Me</label>
+                    <label>Về tôi</label>
                     <textarea class="form-control input-lg" rows="4" name="aboutme"><?php echo $row['aboutme']; ?></textarea>
                   </div>
                   <div class="form-group">
-                    <label>Upload/Change Resume</label>
+                    <label>Tải lên/thay đổi hồ sơ cá nhân</label>
                     <input type="file" name="resume" class="btn btn-default">
                   </div>
                 </div>
@@ -183,8 +177,7 @@ require_once("../db.php");
 
   <footer class="main-footer" style="margin-left: 0px;">
     <div class="text-center">
-      <strong>Copyright &copy; 2016-2017 <a href="jonsnow.netai.net">Job Portal</a>.</strong> All rights
-    reserved.
+      
     </div>
   </footer>
 

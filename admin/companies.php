@@ -14,7 +14,7 @@ require_once("../db.php");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Job Portal</title>
+  <title>Admin</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -51,7 +51,7 @@ require_once("../db.php");
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>J</b>P</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Job</b> Portal</span>
+      <span class="logo-lg"><b>Ad</b>min</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -78,32 +78,32 @@ require_once("../db.php");
               </div>
               <div class="box-body no-padding">
                 <ul class="nav nav-pills nav-stacked">
-                  <li><a href="dashboard.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-                  <li><a href="active-jobs.php"><i class="fa fa-briefcase"></i> Active Jobs</a></li>
-                  <li><a href="applications.php"><i class="fa fa-address-card-o"></i> Applications</a></li>
-                  <li class="active"><a href="companies.php"><i class="fa fa-building"></i> Companies</a></li>
-                  <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Logout</a></li>
+                <li><a href="dashboard.php"><i class="fa fa-dashboard"></i> Bảng điều khiển</a></li>
+                  <li><a href="active-jobs.php"><i class="fa fa-briefcase"></i> Việc làm đang hoạt động</a></li>
+                  <li><a href="applications.php"><i class="fa fa-address-card-o"></i> Đơn xin việc</a></li>
+                  <li class="active"><a href="companies.php"><i class="fa fa-building"></i>Người dùng</a></li>
+                  <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Đăng xuất</a></li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="col-md-9 bg-white padding-2">
 
-            <h3>Companies</h3>
+            <h3>Người dùng</h3>
             <div class="row margin-top-20">
               <div class="col-md-12">
                 <div class="box-body table-responsive no-padding">
                   <table id="example2" class="table table-hover">
                     <thead>
-                      <th>Company Name</th>
-                      <th>Account Creator Name</th>
+                      <th>Tên công ty</th>
+                      <th>Tên người tạo tài khoản</th>
                       <th>Email</th>
-                      <th>Phone</th>
-                      <th>City</th>
-                      <th>State</th>
-                      <th>Country</th>
-                      <th>Status</th>
-                      <th>Delete</th>
+                      <th>Điện thoại</th>
+                      <th>Thành phố</th>
+                      <th>Khu vực</th>
+                      <th>Quốc gia</th>
+                      <th>Trạng thái</th>
+                      <th>Xóa</th>
                     </thead>
                     <tbody>
                       <?php
@@ -117,8 +117,8 @@ require_once("../db.php");
                         <td><?php echo $row['name']; ?></td>
                         <td><?php echo $row['email']; ?></td>
                         <td><?php echo $row['contactno']; ?></td>
-                        <td><?php echo $row['city']; ?></td>
                         <td><?php echo $row['state']; ?></td>
+                
                         <td><?php echo $row['country']; ?></td>
                         <td>
                         <?php
@@ -126,18 +126,18 @@ require_once("../db.php");
                             echo "Activated";
                           } else if($row['active'] == '2') {
                             ?>
-                            <a href="reject-company.php?id=<?php echo $row['id_company']; ?>">Reject</a> <a href="approve-company.php?id=<?php echo $row['id_company']; ?>">Approve</a>
+                            <a href="reject-company.php?id=<?php echo $row['id_company']; ?>">Từ chối</a> <a href="approve-company.php?id=<?php echo $row['id_company']; ?>">Chấp thuận</a>
                             <?php
                           } else if ($row['active'] == '3') {
                             ?>
-                              <a href="approve-company.php?id=<?php echo $row['id_company']; ?>">Reactivate</a>
+                              <a href="approve-company.php?id=<?php echo $row['id_company']; ?>">Kích hoạt lại</a>
                             <?php
                           } else if($row['active'] == '0') {
                             echo "Rejected";
                           }
                         ?>                          
                         </td>
-                        <td><a href="delete-company.php?id=<?php echo $row['id_company']; ?>">Delete</a></td>
+                        <td><a href="delete-company.php?id=<?php echo $row['id_company']; ?>">Xóa</a></td>
                       </tr>  
                      <?php
                         }
@@ -160,8 +160,7 @@ require_once("../db.php");
 
   <footer class="main-footer" style="margin-left: 0px;">
     <div class="text-center">
-      <strong>Copyright &copy; 2016-2017 <a href="jonsnow.netai.net">Job Portal</a>.</strong> All rights
-    reserved.
+   
     </div>
   </footer>
 

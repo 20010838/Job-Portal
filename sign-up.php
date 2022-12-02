@@ -13,7 +13,7 @@ if(isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Job Portal</title>
+  <title>Cổng việc làm</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -48,7 +48,7 @@ if(isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>J</b>P</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Job</b> Portal</span>
+      <span class="logo-lg"><b>Cổng</b> việc làm</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -61,27 +61,27 @@ if(isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
           </li>
           <?php if(empty($_SESSION['id_user']) && empty($_SESSION['id_company'])) { ?>
           <li>
-            <a href="login.php">Login</a>
+            <a href="login.php">Đăng nhập</a>
           </li>
           <li>
-            <a href="sign-up.php">Sign Up</a>
+            <a href="sign-up.php">Đăng ký</a>
           </li>  
           <?php } else { 
 
             if(isset($_SESSION['id_user'])) { 
           ?>        
           <li>
-            <a href="user/index.php">Dashboard</a>
+            <a href="user/index.php">Bảng điều khiển</a>
           </li>
           <?php
           } else if(isset($_SESSION['id_company'])) { 
           ?>        
           <li>
-            <a href="company/index.php">Dashboard</a>
+            <a href="company/index.php">Bảng điều khiển</a>
           </li>
           <?php } ?>
           <li>
-            <a href="logout.php">Logout</a>
+            <a href="logout.php">Đăng xuất</a>
           </li>
           <?php } ?>          
         </ul>
@@ -95,24 +95,24 @@ if(isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
     <section class="content-header">
       <div class="container">
         <div class="row latest-job margin-top-50 margin-bottom-20">
-          <h1 class="text-center margin-bottom-20">Sign Up</h1>
+          <h1 class="text-center margin-bottom-20">Đăng ký</h1>
           <div class="col-md-6 latest-job ">
             <div class="small-box bg-yellow padding-5">
               <div class="inner">
-                <h3 class="text-center">User Registration</h3>
+                <h3 class="text-center">Với tư cách người dùng</h3>
               </div>
               <a href="register-candidates.php" class="small-box-footer">
-                Register <i class="fa fa-arrow-circle-right"></i>
+                Đăng ký <i class="fa fa-arrow-circle-right"></i>
               </a>
             </div>
           </div>
           <div class="col-md-6 latest-job ">
             <div class="small-box bg-red padding-5">
               <div class="inner">
-                <h3 class="text-center">Company Registration</h3>
+                <h3 class="text-center">Với tư cách công ty</h3>
               </div>
               <a href="register-company.php" class="small-box-footer">
-                Register <i class="fa fa-arrow-circle-right"></i>
+                Đăng ký <i class="fa fa-arrow-circle-right"></i>
               </a>
             </div>
           </div>
@@ -127,8 +127,7 @@ if(isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
 
   <footer class="main-footer" style="margin-left: 0px;">
     <div class="text-center">
-      <strong>Copyright &copy; 2016-2017 <a href="jonsnow.netai.net">Job Portal</a>.</strong> All rights
-    reserved.
+     
     </div>
   </footer>
 

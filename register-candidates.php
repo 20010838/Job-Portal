@@ -61,27 +61,27 @@ if(isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
           </li>
           <?php if(empty($_SESSION['id_user']) && empty($_SESSION['id_company'])) { ?>
           <li>
-            <a href="login.php">Login</a>
+            <a href="login.php">Đăng nhâp</a>
           </li>
           <li>
-            <a href="sign-up.php">Sign Up</a>
+            <a href="sign-up.php">Dăng ký</a>
           </li>  
           <?php } else { 
 
             if(isset($_SESSION['id_user'])) { 
           ?>        
           <li>
-            <a href="user/index.php">Dashboard</a>
+            <a href="user/index.php">Bảng điều khiển</a>
           </li>
           <?php
           } else if(isset($_SESSION['id_company'])) { 
           ?>        
           <li>
-            <a href="company/index.php">Dashboard</a>
+            <a href="company/index.php">Bảng điều khiển</a>
           </li>
           <?php } ?>
           <li>
-            <a href="logout.php">Logout</a>
+            <a href="logout.php">Đăng xuất</a>
           </li>
           <?php } ?>          
         </ul>
@@ -95,7 +95,7 @@ if(isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
     <section class="content-header">
       <div class="container">
         <div class="row latest-job margin-top-50 margin-bottom-20 bg-white">
-          <h1 class="text-center margin-bottom-20">CREATE YOUR PROFILE</h1>
+          <h1 class="text-center margin-bottom-20">Tạo hồ sơ của bạn</h1>
           <form method="post" id="registerCandidates" action="adduser.php" enctype="multipart/form-data">
             <div class="col-md-6 latest-job ">
               <div class="form-group">
@@ -108,37 +108,36 @@ if(isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
                 <input class="form-control input-lg" type="text" id="email" name="email" placeholder="Email *" required>
               </div>
               <div class="form-group">
-                <textarea class="form-control input-lg" rows="4" id="aboutme" name="aboutme" placeholder="Brief intro about yourself *" required></textarea>
+                <textarea class="form-control input-lg" rows="4" id="aboutme" name="aboutme" placeholder="Giới thiệu ngắn gọn về bản thân bạn
+ *" required></textarea>
               </div>
               <div class="form-group">
-                <label>Date Of Birth</label>
-                <input class="form-control input-lg" type="date" id="dob" min="1960-01-01" max="1999-01-31" name="dob" placeholder="Date Of Birth">
+                <label>Ngày sinh</label>
+                <input class="form-control input-lg" type="date" id="dob" min="1960-01-01" max="2022-11-06" name="dob" placeholder="Ngày sinh">
               </div>
               <div class="form-group">
                 <input class="form-control input-lg" type="text" id="age" name="age" placeholder="Age" readonly>
               </div>
               <div class="form-group">
-                <label>Passing Year</label>
-                <input class="form-control input-lg" type="date" id="passingyear" name="passingyear" placeholder="Passing Year">
+                <label>Năm tốt nghiệp</label>
+                <input class="form-control input-lg" type="date" id="passingyear" name="passingyear" placeholder="Năm tốt nghiệp">
               </div>       
               <div class="form-group">
-                <input class="form-control input-lg" type="text" id="qualification" name="qualification" placeholder="Highest Qualification">
+                <input class="form-control input-lg" type="text" id="qualification" name="qualification" placeholder="Bằng cấp">
               </div>
-              <div class="form-group">
-                <input class="form-control input-lg" type="text" id="stream" name="stream" placeholder="Stream">
-              </div>                    
+                             
               <div class="form-group checkbox">
-                <label><input type="checkbox"> I accept terms & conditions</label>
+                <label><input type="checkbox"> Tôi chấp nhận các điều khoản & điều kiện</label>
               </div>
               <div class="form-group">
-                <button class="btn btn-flat btn-success">Register</button>
+                <button class="btn btn-flat btn-success">Đăng ký</button>
               </div>
               <?php 
               //If User already registered with this email then show error message.
               if(isset($_SESSION['registerError'])) {
                 ?>
                 <div class="form-group">
-                  <label style="color: red;">Email Already Exists! Choose A Different Email!</label>
+                  <label style="color: red;">Email đã tồn tại! Chọn một email khác!</label>
                 </div>
               <?php
                unset($_SESSION['registerError']); }
@@ -153,35 +152,33 @@ if(isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
             </div>            
             <div class="col-md-6 latest-job ">
               <div class="form-group">
-                <input class="form-control input-lg" type="password" id="password" name="password" placeholder="Password *" required>
+                <input class="form-control input-lg" type="password" id="password" name="password" placeholder="Mật khẩu *" required>
               </div>
               <div class="form-group">
-                <input class="form-control input-lg" type="password" id="cpassword" name="cpassword" placeholder="Confirm Password *" required>
+                <input class="form-control input-lg" type="password" id="cpassword" name="cpassword" placeholder="Xác nhận mật khẩu *" required>
               </div>
               <div id="passwordError" class="btn btn-flat btn-danger hide-me" >
-                    Password Mismatch!! 
+                    Mật khẩu không khớp 
                   </div>
               <div class="form-group">
-                <input class="form-control input-lg" type="text" id="contactno" name="contactno" minlength="10" maxlength="10" onkeypress="return validatePhone(event);" placeholder="Phone Number">
+                <input class="form-control input-lg" type="text" id="contactno" name="contactno" minlength="10" maxlength="10" onkeypress="return validatePhone(event);" placeholder="Số điện thoại">
               </div>
               <div class="form-group">
-                <textarea class="form-control input-lg" rows="4" id="address" name="address" placeholder="Address"></textarea>
+                <textarea class="form-control input-lg" rows="4" id="address" name="address" placeholder="Địa chỉ"></textarea>
               </div>
               <div class="form-group">
-                <input class="form-control input-lg" type="text" id="city" name="city" placeholder="City">
+                <input class="form-control input-lg" type="text" id="city" name="city" placeholder="Thành phố">
               </div>
+             
               <div class="form-group">
-                <input class="form-control input-lg" type="text" id="state" name="state" placeholder="State">
-              </div>
-              <div class="form-group">
-                <textarea class="form-control input-lg" rows="4" id="skills" name="skills" placeholder="Enter Skills"></textarea>
+                <textarea class="form-control input-lg" rows="4" id="skills" name="skills" placeholder="Nhập những kỹ năng của bạn "></textarea>
               </div>              
               <div class="form-group">
-                <input class="form-control input-lg" type="text" id="designation" name="designation" placeholder="Designation">
+                <input class="form-control input-lg" type="text" id="designation" name="designation" placeholder="Sơ yếu lý lịch">
               </div>
 
               <div class="form-group">
-                <label style="color: red;">File Format PDF Only!</label>
+                <label style="color: red;">Định dạng pdf</label>
                 <input type="file" name="resume" class="btn btn-flat btn-danger" required>
               </div>
             </div>
@@ -198,8 +195,7 @@ if(isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
 
   <footer class="main-footer" style="margin-left: 0px;">
     <div class="text-center">
-      <strong>Copyright &copy; 2016-2017 <a href="jonsnow.netai.net">Job Portal</a>.</strong> All rights
-    reserved.
+      
     </div>
   </footer>
 

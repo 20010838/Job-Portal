@@ -86,7 +86,7 @@ if(isset($_POST)) {
 		}
 
 		//sql new registration insert query
-		$sql = "INSERT INTO company(name, companyname, country, state, city, contactno, website, email, password, aboutme, logo) VALUES ('$name', '$companyname', '$country', '$state', '$city', '$contactno', '$website', '$email', '$password', '$aboutme', '$file')";
+		$sql = "INSERT INTO company(name, companyname, country, state, contactno, website, email, password, aboutme, logo) VALUES ('$name', '$companyname', '$country', '$state', '$contactno', '$website', '$email', '$password', '$aboutme', '$file')";
 
 		if($conn->query($sql)===TRUE) {
 

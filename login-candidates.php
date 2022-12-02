@@ -38,11 +38,11 @@ if(isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="index.php"><b>Job</b> Portal</a>
+    <a href="index.php"><b>Tìm kiếm</b> Việc làm</a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Candidates Login</p>
+    <p class="login-box-msg">Đăng nhập với tư cách ứng viên</p>
 
     <form method="post" action="checklogin.php">
       <div class="form-group has-feedback">
@@ -50,7 +50,7 @@ if(isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+        <input type="password" class="form-control" id="password" name="password" placeholder="Mật khẩu">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
@@ -59,7 +59,7 @@ if(isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Đăng nhập</button>
         </div>
         <!-- /.col -->
       </div>
@@ -73,7 +73,7 @@ if(isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
     if(isset($_SESSION['registerCompleted'])) {
       ?>
       <div>
-        <p id="successMessage" class="text-center">Check your email!</p>
+        <p id="successMessage" class="text-center">Kiểm tra email của bạn!</p>
       </div>
     <?php
      unset($_SESSION['registerCompleted']); }
@@ -83,7 +83,7 @@ if(isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
     if(isset($_SESSION['loginError'])) {
       ?>
       <div>
-        <p class="text-center">Invalid Email/Password! Try Again!</p>
+        <p class="text-center">Email hoặc mật khẩu không hợp lệ!Hãy thử lại</p>
       </div>
     <?php
      unset($_SESSION['loginError']); }
@@ -94,7 +94,7 @@ if(isset($_SESSION['id_user']) || isset($_SESSION['id_company'])) {
     if(isset($_SESSION['userActivated'])) {
       ?>
       <div>
-        <p class="text-center">Your Account Is Active. You Can Login</p>
+        <p class="text-center">Tài khoản của bạn đã kích hoạt. Bạn có thể đăng nhập</p>
       </div>
     <?php
      unset($_SESSION['userActivated']); }

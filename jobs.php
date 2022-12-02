@@ -12,7 +12,7 @@ require_once("db.php");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Job Portal</title>
+  <title>Tìm kiếm</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -47,7 +47,7 @@ require_once("db.php");
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>J</b>P</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Job</b> Portal</span>
+      <span class="logo-lg"><b>Việc</b> Làm</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -57,27 +57,27 @@ require_once("db.php");
         <ul class="nav navbar-nav">
           <?php if(empty($_SESSION['id_user']) && empty($_SESSION['id_company'])) { ?>
           <li>
-            <a href="login.php">Login</a>
+            <a href="login.php">Đăng nhập</a>
           </li>
           <li>
-            <a href="sign-up.php">Sign Up</a>
+            <a href="sign-up.php">Đăng xuất</a>
           </li>  
           <?php } else { 
 
             if(isset($_SESSION['id_user'])) { 
           ?>        
           <li>
-            <a href="user/index.php">Dashboard</a>
+            <a href="user/index.php">Bảng điều khiển</a>
           </li>
           <?php
           } else if(isset($_SESSION['id_company'])) { 
           ?>        
           <li>
-            <a href="company/index.php">Dashboard</a>
+            <a href="company/index.php">Bảng điều khiển</a>
           </li>
           <?php } ?>
           <li>
-            <a href="logout.php">Logout</a>
+            <a href="logout.php">Đăng xuất</a>
           </li>
           <?php } ?>          
         </ul>
@@ -92,9 +92,9 @@ require_once("db.php");
       <div class="container">
         <div class="row">
           <div class="col-md-12 latest-job margin-top-50 margin-bottom-20">
-          <h1 class="text-center">Latest Jobs</h1>  
+          <h1 class="text-center">Công việc mới nhất</h1>  
             <div class="input-group input-group-lg">
-                <input type="text" id="searchBar" class="form-control" placeholder="Search job">
+                <input type="text" id="searchBar" class="form-control" placeholder="Tìm kiếm công việc">
                 <span class="input-group-btn">
                   <button id="searchBtn" type="button" class="btn btn-info btn-flat">Go!</button>
                 </span>
@@ -110,25 +110,36 @@ require_once("db.php");
           <div class="col-md-3">
             <div class="box box-solid">
               <div class="box-header with-border">
-                <h3 class="box-title">Filters</h3>
+                <h3 class="box-title">Bộ lọc</h3>
               </div>
               <div class="box-body no-padding">
                 <ul class="nav nav-pills nav-stacked tree" data-widget="tree">
                   <li class="treeview menu-open">
-                    <a href="#"><i class="fa fa-plane text-red"></i> City <span class="pull-right"><i class="fa fa-angle-down pull-right"></i></span></a>
+                    <a href="#"><i class="fa fa-plane text-red"></i> Thành phố <span class="pull-right"><i class="fa fa-angle-down pull-right"></i></span></a>
                     <ul class="treeview-menu">
-                      <li><a href=""  class="citySearch" data-target="Bengaluru"><i class="fa fa-circle-o text-yellow"></i> Bengaluru</a></li>
-                      <li><a href="" class="citySearch" data-target="Navi Mumbai"><i class="fa fa-circle-o text-yellow"></i> Navi Mumbai</a></li>
+                      <li><a href=""  class="citySearch" data-target="Hà Nội"><i class="fa fa-circle-o text-yellow"></i> Hà Nội</a></li>
+                      <li><a href="" class="citySearch" data-target="Hồ Chí Minh"><i class="fa fa-circle-o text-yellow"></i> Hồ Chí Minh</a></li>
+                      <li><a href="" class="citySearch" data-target="Đà Nẵng"><i class="fa fa-circle-o text-yellow"></i> Đà Nẵng</a></li>
                     </ul>
                   </li>
                   <li class="treeview menu-open">
-                    <a href="#"><i class="fa fa-plane text-red"></i> Experience <span class="pull-right"><i class="fa fa-angle-down pull-right"></i></span></a>
+                    <a href="#"><i class="fa fa-location-arrow text-red"></i> Kinh nghiệm <span class="pull-right"><i class="fa fa-angle-down pull-right"></i></span></a>
                     <ul class="treeview-menu">
-                      <li><a href="" class="experienceSearch" data-target='1'><i class="fa fa-circle-o text-yellow"></i> > 1 Years</a></li>
-                      <li><a href="" class="experienceSearch" data-target='2'><i class="fa fa-circle-o text-yellow"></i> > 2 Years</a></li>
-                      <li><a href="" class="experienceSearch" data-target='3'><i class="fa fa-circle-o text-yellow"></i> > 3 Years</a></li>
-                      <li><a href="" class="experienceSearch" data-target='4'><i class="fa fa-circle-o text-yellow"></i> > 4 Years</a></li>
-                      <li><a href="" class="experienceSearch" data-target='5'><i class="fa fa-circle-o text-yellow"></i> > 5 Years</a></li>
+                      <li><a href="" class="experienceSearch" data-target='1'><i class="fa fa-circle-o text-yellow"></i> > 1 Năm</a></li>
+                      <li><a href="" class="experienceSearch" data-target='2'><i class="fa fa-circle-o text-yellow"></i> > 2 Năm</a></li>
+                      <li><a href="" class="experienceSearch" data-target='3'><i class="fa fa-circle-o text-yellow"></i> > 3 Năm</a></li>
+                      <li><a href="" class="experienceSearch" data-target='4'><i class="fa fa-circle-o text-yellow"></i> > 4 Năm</a></li>
+                      <li><a href="" class="experienceSearch" data-target='5'><i class="fa fa-circle-o text-yellow"></i> > 5 Năm</a></li>
+                    </ul>
+                  </li>
+                  <li class="treeview menu-open">
+                    <a href="#"><i class="fa fa-money text-red"></i> Mức lương <span class="pull-right"><i class="fa fa-angle-down pull-right"></i></span></a>
+                    <ul class="treeview-menu">
+                      <li><a href="" class="salarySearch" data-target='1000000'><i class="fa fa-circle-o text-yellow"></i> > 1.000.000</a></li>
+                      <li><a href="" class="salarySearch" data-target='3000000'><i class="fa fa-circle-o text-yellow"></i> > 3.000.000</a></li>
+                      <li><a href="" class="salarySearch" data-target='6000000'><i class="fa fa-circle-o text-yellow"></i> > 6.000.000</a></li>
+                      <li><a href="" class="salarySearch" data-target='8000000'><i class="fa fa-circle-o text-yellow"></i> > 8.000.000</a></li>
+                      <li><a href="" class="salarySearch" data-target='100000000'><i class="fa fa-circle-o text-yellow"></i> > 100.000.000</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -176,8 +187,7 @@ require_once("db.php");
 
   <footer class="main-footer" style="margin-left: 0px;">
     <div class="text-center">
-      <strong>Copyright &copy; 2016-2017 <a href="jonsnow.netai.net">Job Portal</a>.</strong> All rights
-    reserved.
+     
     </div>
   </footer>
 
@@ -251,7 +261,7 @@ require_once("db.php");
   $(".citySearch").on("click", function(e) {
     e.preventDefault();
     var searchResult = $(this).data("target");
-    var filter = "city";
+    var filter = "state";
     if(searchResult != "") {
       $("#pagination").twbsPagination('destroy');
       Search(searchResult, filter);
@@ -261,7 +271,20 @@ require_once("db.php");
     }
   });
 </script>
-
+<script>
+  $(".salarySearch").on("click", function(e) {
+    e.preventDefault();
+    var searchResult = $(this).data("target");
+    var filter = "maximumsalary";
+    if(searchResult != "") {
+      $("#pagination").twbsPagination('destroy');
+      Search(searchResult, filter);
+    } else {
+      $("#pagination").twbsPagination('destroy');
+      Pagination();
+    }
+  });
+</script>
 <script>
   function Search(val, filter) {
     $("#pagination").twbsPagination({

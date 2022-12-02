@@ -16,7 +16,7 @@ require_once("../db.php");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Job Portal</title>
+  <title>Tuyển dụng</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -51,7 +51,7 @@ require_once("../db.php");
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>J</b>P</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Job</b> Portal</span>
+      <span class="logo-lg"><b>Tuyển</b> Dụng</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -78,22 +78,22 @@ require_once("../db.php");
               </div>
               <div class="box-body no-padding">
                 <ul class="nav nav-pills nav-stacked">
-                  <li><a href="index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-                  <li class="active"><a href="edit-company.php"><i class="fa fa-tv"></i> My Company</a></li>
-                  <li><a href="create-job-post.php"><i class="fa fa-file-o"></i> Create Job Post</a></li>
-                  <li><a href="my-job-post.php"><i class="fa fa-file-o"></i> My Job Post</a></li>
-                  <li><a href="job-applications.php"><i class="fa fa-file-o"></i> Job Application</a></li>
-                  <li><a href="mailbox.php"><i class="fa fa-envelope"></i> Mailbox</a></li>
-                  <li><a href="settings.php"><i class="fa fa-gear"></i> Settings</a></li>
-                  <li><a href="resume-database.php"><i class="fa fa-user"></i> Resume Database</a></li>
-                  <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Logout</a></li>
+                  <li><a href="index.php"><i class="fa fa-dashboard"></i> Bảng điều khiển</a></li>
+                  <li class="active"><a href="edit-company.php"><i class="fa fa-tv"></i> Công ty của tôi</a></li>
+                  <li><a href="create-job-post.php"><i class="fa fa-file-o"></i> Tạo bài đăng tuyển dụng</a></li>
+                  <li><a href="my-job-post.php"><i class="fa fa-file-o"></i> Bài đăng của tôi</a></li>
+                  <li><a href="job-applications.php"><i class="fa fa-file-o"></i> Đơn xin việc</a></li>
+                  <li><a href="mailbox.php"><i class="fa fa-envelope"></i> Hộp thư</a></li>
+                  <li><a href="settings.php"><i class="fa fa-gear"></i> Cài đặt</a></li>
+                  <li><a href="resume-database.php"><i class="fa fa-user"></i> Hồ sơ ứng viên</a></li>
+                  <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Đăng xuất</a></li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="col-md-9 bg-white padding-2">
-            <h2><i>My Company</i></h2>
-            <p>In this section you can change your company details</p>
+            <h2><i>Thông tin công ty</i></h2>
+            <p>Chỉnh sửa thông tin công ty</p>
             <div class="row">
               <form action="update-company.php" method="post" enctype="multipart/form-data">
                 <?php
@@ -105,7 +105,7 @@ require_once("../db.php");
                 ?>
                 <div class="col-md-6 latest-job ">
                   <div class="form-group">
-                     <label>Company Name</label>
+                     <label>Tên công ty</label>
                     <input type="text" class="form-control input-lg" name="companyname" value="<?php echo $row['companyname']; ?>" required="">
                   </div>
                   <div class="form-group">
@@ -113,33 +113,30 @@ require_once("../db.php");
                     <input type="text" class="form-control input-lg" name="website" value="<?php echo $row['website']; ?>" required="">
                   </div>
                   <div class="form-group">
-                    <label for="email">Email address</label>
+                    <label for="email">Email</label>
                     <input type="email" class="form-control input-lg" id="email" placeholder="Email" value="<?php echo $row['email']; ?>" readonly>
                   </div>
                   <div class="form-group">
-                    <label>About Me</label>
+                    <label>Về tôi</label>
                     <textarea class="form-control input-lg" rows="4" name="aboutme"><?php echo $row['aboutme']; ?></textarea>
                   </div>
                   <div class="form-group">
-                    <button type="submit" class="btn btn-flat btn-success">Update Company Profile</button>
+                    <button type="submit" class="btn btn-flat btn-success">Update Hồ sơ công ty</button>
                   </div>
                 </div>
                 <div class="col-md-6 latest-job ">
                   <div class="form-group">
-                    <label for="contactno">Contact Number</label>
+                    <label for="contactno">SĐT liên lạc</label>
                     <input type="text" class="form-control input-lg" id="contactno" name="contactno" placeholder="Contact Number" onkeypress="return validatePhone(event);" minlength="10" maxlength="10" value="<?php echo $row['contactno']; ?>">
                   </div>
                   <div class="form-group">
-                    <label for="city">City</label>
-                    <input type="text" class="form-control input-lg" id="city" name="city"
-                    onkeypress="return validateName(event);" value="<?php echo $row['city']; ?>" placeholder="city">
+                    <label for="city">Thành phố</label>
+                    <input type="text" class="form-control input-lg" id="state" name="state"
+                    onkeypress="return validateName(event);" value="<?php echo $row['state']; ?>" placeholder="Thành phố">
                   </div>
+                  
                   <div class="form-group">
-                    <label for="state">State</label>
-                    <input type="text" class="form-control input-lg" id="state" onkeypress="return validateName(event);" name="state" placeholder="state" value="<?php echo $row['state']; ?>">
-                  </div>
-                  <div class="form-group">
-                    <label>Change Company Logo</label>
+                    <label>Thay đổi logo công ty</label>
                     <input type="file" name="image" class="btn btn-default">
                     <?php if($row['logo'] != "") { ?>
                     <img src="../uploads/logo/<?php echo $row['logo']; ?>" class="img-responsive" style="max-height: 200px; max-width: 200px;">
@@ -172,8 +169,7 @@ require_once("../db.php");
 
   <footer class="main-footer" style="margin-left: 0px;">
     <div class="text-center">
-      <strong>Copyright &copy; 2016-2017 <a href="jonsnow.netai.net">Job Portal</a>.</strong> All rights
-    reserved.
+     
     </div>
   </footer>
 

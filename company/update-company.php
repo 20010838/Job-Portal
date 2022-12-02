@@ -18,7 +18,6 @@ if(isset($_POST)) {
 	$companyname = mysqli_real_escape_string($conn, $_POST['companyname']);
 	$website = mysqli_real_escape_string($conn, $_POST['website']);
 	$city = mysqli_real_escape_string($conn, $_POST['city']);
-	$state = mysqli_real_escape_string($conn, $_POST['state']);
 	$contactno = mysqli_real_escape_string($conn, $_POST['contactno']);
 	$aboutme = mysqli_real_escape_string($conn, $_POST['aboutme']);
 
@@ -63,7 +62,7 @@ if(isset($_POST)) {
 	
 
 	//Update User Details Query
-	$sql = "UPDATE company SET companyname='$companyname', website='$website', city='$city', state='$state', contactno='$contactno', aboutme='$aboutme'";
+	$sql = "UPDATE company SET companyname='$companyname', website='$website', city='$city', contactno='$contactno', aboutme='$aboutme'";
 
 	if($uploadOk == true) {
 		$sql = $sql . ", logo='$file'";

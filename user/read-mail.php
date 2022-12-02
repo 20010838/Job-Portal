@@ -49,7 +49,7 @@ if($result->num_rows >  0 ){
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Job Portal</title>
+  <title>Tìm kiếm việc làm</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -89,7 +89,7 @@ if($result->num_rows >  0 ){
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>J</b>P</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Job</b> Portal</span>
+      <span class="logo-lg"><b>Tìm</b> Việc</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -98,7 +98,7 @@ if($result->num_rows >  0 ){
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <li>
-            <a href="../jobs.php">Jobs</a>
+            <a href="../jobs.php">Công việc</a>
           </li>          
         </ul>
       </div>
@@ -118,12 +118,12 @@ if($result->num_rows >  0 ){
               </div>
               <div class="box-body no-padding">
                 <ul class="nav nav-pills nav-stacked">
-                  <li><a href="edit-profile.php"><i class="fa fa-user"></i> Edit Profile</a></li>
-                  <li><a href="index.php"><i class="fa fa-address-card-o"></i> My Applications</a></li>
-                  <li><a href="../jobs.php"><i class="fa fa-list-ul"></i> Jobs</a></li>
-                  <li class="active"><a href="mailbox.php"><i class="fa fa-envelope"></i> Mailbox</a></li>
-                  <li><a href="settings.php"><i class="fa fa-gear"></i> Settings</a></li>
-                  <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Logout</a></li>
+                  <li><a href="edit-profile.php"><i class="fa fa-user"></i> Chỉnh sửa hồ sơ</a></li>
+                  <li><a href="index.php"><i class="fa fa-address-card-o"></i> Đơn xin việc của tôi</a></li>
+                  <li><a href="../jobs.php"><i class="fa fa-list-ul"></i> Công việc</a></li>
+                  <li class="active"><a href="mailbox.php"><i class="fa fa-envelope"></i> Hộp thư</a></li>
+                  <li><a href="settings.php"><i class="fa fa-gear"></i> Cài đặt</a></li>
+                  <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Đăng xuất</a></li>
                 </ul>
               </div>
             </div>
@@ -138,7 +138,7 @@ if($result->num_rows >  0 ){
                   <div class="box-body no-padding">
                     <div class="mailbox-read-info">
                       <h3><?php echo $row['subject']; ?></h3>
-                      <h5>From: <?php if($row['fromuser'] == "company") { echo $rowCompany['companyname']; } else { echo $rowUser['firstname']; } ?>
+                      <h5>Từ: <?php if($row['fromuser'] == "company") { echo $rowCompany['companyname']; } else { echo $rowUser['firstname']; } ?>
                         <span class="mailbox-read-time pull-right"><?php echo date("d-M-Y h:i a", strtotime($row['createdAt'])); ?></span></h5>
                     </div>
                     <div class="mailbox-read-message">
@@ -159,8 +159,8 @@ if($result->num_rows >  0 ){
                   <div class="box box-primary">
                     <div class="box-body no-padding">
                       <div class="mailbox-read-info">
-                        <h3>Reply Message</h3>
-                        <h5>From: <?php if($rowReply['usertype'] == "company") { echo $rowCompany['companyname']; } else { echo $rowUser['firstname']; } ?>
+                        <h3>Trả lời tin nhắn</h3>
+                        <h5>Từ: <?php if($rowReply['usertype'] == "company") { echo $rowCompany['companyname']; } else { echo $rowUser['firstname']; } ?>
                           <span class="mailbox-read-time pull-right"><?php echo date("d-M-Y h:i a", strtotime($rowReply['createdAt'])); ?></span></h5>
                       </div>
                       <div class="mailbox-read-message">
@@ -178,7 +178,7 @@ if($result->num_rows >  0 ){
                   <!-- /.box-header -->
                   <div class="box-body no-padding">
                     <div class="mailbox-read-info">
-                      <h3>Send Reply</h3>
+                      <h3>Gửi câu trả lời</h3>
                     </div>
                     <div class="mailbox-read-message">
                       <form action="reply-mailbox.php" method="post">
@@ -187,7 +187,7 @@ if($result->num_rows >  0 ){
                           <input type="hidden" name="id_mail" value="<?php echo $_GET['id_mail']; ?>">
                         </div>
                         <div class="form-group">
-                          <button type="submit" class="btn btn-flat btn-success">Reply</button>
+                          <button type="submit" class="btn btn-flat btn-success">Trả lời</button>
                         </div>
                       </form>
                     </div>
@@ -215,8 +215,7 @@ if($result->num_rows >  0 ){
 
   <footer class="main-footer" style="margin-left: 0px;">
     <div class="text-center">
-      <strong>Copyright &copy; 2016-2017 <a href="jonsnow.netai.net">Job Portal</a>.</strong> All rights
-    reserved.
+
     </div>
   </footer>
 

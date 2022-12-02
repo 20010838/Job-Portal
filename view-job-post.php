@@ -12,7 +12,7 @@ require_once("db.php");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Job Portal</title>
+  <title>Tìm kiếm việc làm</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -47,7 +47,7 @@ require_once("db.php");
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>J</b>P</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Job</b> Portal</span>
+      <span class="logo-lg"><b>Tìm</b>việc</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -56,10 +56,10 @@ require_once("db.php");
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <li>
-            <a href="login.php">Login</a>
+            <a href="login.php">Đăng nhập</a>
           </li>
           <li>
-            <a href="sign-up.php">Sign Up</a>
+            <a href="sign-up.php">Đăng ký</a>
           </li>          
         </ul>
       </div>
@@ -88,12 +88,12 @@ require_once("db.php");
               <h2><b><i><?php echo $row['jobtitle']; ?></i></b></h2>
             </div>
             <div class="pull-right">
-              <a href="jobs.php" class="btn btn-default btn-lg btn-flat margin-top-20"><i class="fa fa-arrow-circle-left"></i> Back</a>
+              <a href="jobs.php" class="btn btn-default btn-lg btn-flat margin-top-20"><i class="fa fa-arrow-circle-left"></i> Thoát</a>
             </div>
             <div class="clearfix"></div>
             <hr>
             <div>
-              <p><span class="margin-right-10"><i class="fa fa-location-arrow text-green"></i> <?php echo $row['city']; ?></span> <i class="fa fa-calendar text-green"></i> <?php echo date("d-M-Y", strtotime($row['createdat'])); ?></p>              
+              <p><span class="margin-right-10"><i class="fa fa-location-arrow text-green"></i> <?php echo $row['state']; ?></span> <i class="fa fa-calendar text-green"></i> <?php echo date("d-M-Y", strtotime($row['createdat'])); ?></p>              
             </div>
             <div>
               <?php echo stripcslashes($row['description']); ?>
@@ -101,7 +101,7 @@ require_once("db.php");
             <?php 
             if(isset($_SESSION["id_user"]) && empty($_SESSION['companyLogged'])) { ?>
             <div>
-              <a href="apply.php?id=<?php echo $row['id_jobpost']; ?>" class="btn btn-success btn-flat margin-top-50">Apply</a>
+              <a href="apply.php?id=<?php echo $row['id_jobpost']; ?>" class="btn btn-success btn-flat margin-top-50">Ứng tuyển</a>
             </div>
             <?php } ?>
             
@@ -112,7 +112,7 @@ require_once("db.php");
               <img src="uploads/logo/<?php echo $row['logo']; ?>" alt="companylogo">
               <div class="caption text-center">
                 <h3><?php echo $row['companyname']; ?></h3>
-                <p><a href="#" class="btn btn-primary btn-flat" role="button">More Info</a>
+                <p><a href="#" class="btn btn-primary btn-flat" role="button">Thông tin thêm</a>
                 <hr>
                 <div class="row">
                   <div class="col-md-4"><a href=""><i class="fa fa-address-card-o"></i> Apply</a></div>
@@ -138,8 +138,7 @@ require_once("db.php");
 
   <footer class="main-footer" style="margin-left: 0px;">
     <div class="text-center">
-      <strong>Copyright &copy; 2016-2017 <a href="jonsnow.netai.net">Job Portal</a>.</strong> All rights
-    reserved.
+      
     </div>
   </footer>
 

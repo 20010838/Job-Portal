@@ -15,7 +15,7 @@
 	font-size: 60px;
 }
 .logo-bg {
-	background-color: #00A65A !important;
+	background-color: #3e82e1 !important;
 }
 
 .index-head > p {
@@ -25,7 +25,9 @@
 .index-head > p > a {
 	margin-top: 20px;
 }
-
+.navbar navbar-static-top {
+background-color: #3b8ab8;
+}
 .latest-job {
 	line-height: 150%;
 }

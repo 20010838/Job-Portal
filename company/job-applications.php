@@ -16,7 +16,7 @@ require_once("../db.php");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Job Portal</title>
+  <title>Tuyển dụng</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -51,7 +51,7 @@ require_once("../db.php");
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>J</b>P</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Job</b> Portal</span>
+      <span class="logo-lg"><b>Tuyển</b> Dụng</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -78,21 +78,22 @@ require_once("../db.php");
               </div>
               <div class="box-body no-padding">
                 <ul class="nav nav-pills nav-stacked">
-                  <li><a href="index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-                  <li><a href="edit-company.php"><i class="fa fa-tv"></i> My Company</a></li>
-                  <li><a href="create-job-post.php"><i class="fa fa-file-o"></i> Create Job Post</a></li>
-                  <li><a href="my-job-post.php"><i class="fa fa-file-o"></i> My Job Post</a></li>
-                  <li class="active"><a href="job-applications.php"><i class="fa fa-file-o"></i> Job Application</a></li>
-                  <li><a href="mailbox.php"><i class="fa fa-envelope"></i> Mailbox</a></li>
-                  <li><a href="settings.php"><i class="fa fa-gear"></i> Settings</a></li>
-                  <li><a href="resume-database.php"><i class="fa fa-user"></i> Resume Database</a></li>
-                  <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Logout</a></li>
+                <li><a href="index.php"><i class="fa fa-dashboard"></i> Bảng điều khiển</a></li>
+                <li><a href="edit-company.php"><i class="fa fa-tv"></i> Công ty của tôi</a></li>
+                  <li><a href="create-job-post.php"><i class="fa fa-file-o"></i> Tạo bài đăng tuyển dụng</a></li>
+                  <li><a href="my-job-post.php"><i class="fa fa-file-o"></i> Bài đăng của tôi</a></li>
+                  <li class="active"><a href="job-applications.php"><i class="fa fa-file-o"></i> Đơn xin việc</a></li>
+                  <li><a href="mailbox.php"><i class="fa fa-envelope"></i> Hộp thư</a></li>
+                  <li><a href="settings.php"><i class="fa fa-gear"></i> Cài đặt</a></li>
+                  <li><a href="resume-database.php"><i class="fa fa-user"></i> Hồ sơ ứng viên</a></li>
+                  <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Đăng xuất</a></li>
+
                 </ul>
               </div>
             </div>
           </div>
           <div class="col-md-9 bg-white padding-2">
-            <h2><i>Recent Applications</i></h2>
+            <h2><i>Đơn xin việc gần đây</i></h2>
 
             <?php
              $sql = "SELECT * FROM job_post INNER JOIN apply_job_post ON job_post.id_jobpost=apply_job_post.id_jobpost  INNER JOIN users ON users.id_user=apply_job_post.id_user WHERE apply_job_post.id_company='$_SESSION[id_company]'";
@@ -109,11 +110,11 @@ require_once("../db.php");
                   <?php 
 
                   if($row['status'] == 0) {
-                    echo '<div class="pull-right"><strong class="text-orange">Pending</strong></div>';
+                    echo '<div class="pull-right"><strong class="text-orange">Chưa giải quyết</strong></div>';
                   } else if ($row['status'] == 1) {
-                    echo '<div class="pull-right"><strong class="text-red">Rejected</strong></div>';
+                    echo '<div class="pull-right"><strong class="text-red">Từ chối</strong></div>';
                   } else if ($row['status'] == 2) {
-                    echo '<div class="pull-right"><strong class="text-green">Under Review</strong></div> ';
+                    echo '<div class="pull-right"><strong class="text-green">Đang xem xét</strong></div> ';
                   }
                   ?>
                                 
@@ -135,10 +136,7 @@ require_once("../db.php");
   <!-- /.content-wrapper -->
 
   <footer class="main-footer" style="margin-left: 0px;">
-    <div class="text-center">
-      <strong>Copyright &copy; 2016-2017 <a href="jonsnow.netai.net">Job Portal</a>.</strong> All rights
-    reserved.
-    </div>
+ 
   </footer>
 
 

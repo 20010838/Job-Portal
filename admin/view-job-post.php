@@ -27,7 +27,7 @@ if($result1->num_rows > 0)
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Job Portal</title>
+  <title>Admin</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -62,7 +62,7 @@ if($result1->num_rows > 0)
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>J</b>P</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Job</b> Portal</span>
+      <span class="logo-lg"><b>Welcome</b> Admin</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -87,12 +87,12 @@ if($result1->num_rows > 0)
               <h2><b><i><?php echo $row['jobtitle']; ?></i></b></h2>
             </div>
             <div class="pull-right">
-              <a href="active-jobs.php" class="btn btn-default btn-lg btn-flat margin-top-20"><i class="fa fa-arrow-circle-left"></i> Back</a>
+              <a href="active-jobs.php" class="btn btn-default btn-lg btn-flat margin-top-20"><i class="fa fa-arrow-circle-left"></i> Thoát</a>
             </div>
             <div class="clearfix"></div>
             <hr>
             <div>
-              <p><span class="margin-right-10"><i class="fa fa-location-arrow text-green"></i> <?php echo $row['city']; ?></span> <i class="fa fa-calendar text-green"></i> <?php echo date("d-M-Y", strtotime($row['createdat'])); ?></p>              
+              <p><span class="margin-right-10"><i class="fa fa-location-arrow text-green"></i> <?php echo $row['state']; ?></span> <i class="fa fa-calendar text-green"></i> <span class="attachment-heading pull-right">->VNĐ<?php echo number_format($row['maximumsalary'],0,'','.'); ?>/Tháng</span> <span class="attachment-heading pull-right"><?php echo number_format($row['minimumsalary'],0,'','.'); ?>/Tháng</span> <?php echo date("d-M-Y", strtotime($row['createdat'])); ?></p>              
             </div>
             <div>
               <?php echo stripcslashes($row['description']); ?>
@@ -119,10 +119,7 @@ if($result1->num_rows > 0)
   <!-- /.content-wrapper -->
 
   <footer class="main-footer" style="margin-left: 0px;">
-    <div class="text-center">
-      <strong>Copyright &copy; 2016-2017 <a href="jonsnow.netai.net">Job Portal</a>.</strong> All rights
-    reserved.
-    </div>
+
   </footer>
 
   <!-- /.control-sidebar -->

@@ -26,7 +26,7 @@ if($result->num_rows == 0)
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Job Portal</title>
+  <title>Tuyển dụng</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -64,7 +64,7 @@ if($result->num_rows == 0)
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>J</b>P</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Job</b> Portal</span>
+      <span class="logo-lg"><b>Tuyển</b> Dụng</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -91,15 +91,15 @@ if($result->num_rows == 0)
               </div>
               <div class="box-body no-padding">
                 <ul class="nav nav-pills nav-stacked">
-                  <li><a href="index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-                  <li><a href="edit-company.php"><i class="fa fa-tv"></i> My Company</a></li>
-                  <li><a href="create-job-post.php"><i class="fa fa-file-o"></i> Create Job Post</a></li>
-                  <li class="active"><a href="my-job-post.php"><i class="fa fa-file-o"></i> My Job Post</a></li>
-                  <li><a href="job-applications.php"><i class="fa fa-file-o"></i> Job Application</a></li>
-                  <li><a href="mailbox.php"><i class="fa fa-envelope"></i> Mailbox</a></li>
-                  <li><a href="settings.php"><i class="fa fa-gear"></i> Settings</a></li>
-                  <li><a href="resume-database.php"><i class="fa fa-user"></i> Resume Database</a></li>
-                  <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Logout</a></li>
+                  <li><a href="index.php"><i class="fa fa-dashboard"></i> Bảng điều khiển</a></li>
+                  <li><a href="edit-company.php"><i class="fa fa-tv"></i> Công y của tôi</a></li>
+                  <li><a href="create-job-post.php"><i class="fa fa-file-o"></i> Tạo bài đăng tuyển dụng</a></li>
+                  <li class="active"><a href="my-job-post.php"><i class="fa fa-file-o"></i> Bài đăng của tôi</a></li>
+                  <li><a href="job-applications.php"><i class="fa fa-file-o"></i> Đơn xin viêc</a></li>
+                  <li><a href="mailbox.php"><i class="fa fa-envelope"></i> Hộp thư</a></li>
+                  <li><a href="settings.php"><i class="fa fa-gear"></i> Cài đặt</a></li>
+                  <li><a href="resume-database.php"><i class="fa fa-user"></i> Hồ sơ ứng viên</a></li>
+                  <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Đăng xuất</a></li>
                 </ul>
               </div>
             </div>
@@ -120,7 +120,7 @@ if($result->num_rows == 0)
                   <h2><b><i><?php echo $row['firstname']. ' '.$row['lastname']; ?></i></b></h2>
                 </div>
                 <div class="pull-right">
-                  <a href="job-applications.php" class="btn btn-default btn-lg btn-flat margin-top-20"><i class="fa fa-arrow-circle-left"></i> Back</a>
+                  <a href="job-applications.php" class="btn btn-default btn-lg btn-flat margin-top-20"><i class="fa fa-arrow-circle-left"></i> Thoát</a>
                 </div>
                 <div class="clearfix"></div>
                 <hr>
@@ -140,10 +140,10 @@ if($result->num_rows == 0)
                   ?>
                   <div class="row">
                     <div class="col-md-3 pull-left">
-                      <a href="under-review.php?id=<?php echo $row['id_user']; ?>&id_jobpost=<?php echo $_GET['id_jobpost']; ?>" class="btn btn-success">Mark Under Review</a>
+                      <a href="under-review.php?id=<?php echo $row['id_user']; ?>&id_jobpost=<?php echo $_GET['id_jobpost']; ?>" class="btn btn-success">Đang xem xét</a>
                     </div>
                     <div class="col-md-3 pull-right">
-                      <a href="reject.php?id=<?php echo $row['id_user']; ?>&id_jobpost=<?php echo $_GET['id_jobpost']; ?>" class="btn btn-danger">Reject Application</a>
+                      <a href="reject.php?id=<?php echo $row['id_user']; ?>&id_jobpost=<?php echo $_GET['id_jobpost']; ?>" class="btn btn-danger">Từ chối đơn xin việc</a>
                     </div>
                   </div>
                 </div>

@@ -16,7 +16,7 @@ require_once("../db.php");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Job Portal</title>
+  <title>Tìm kiếm việc làm</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -53,7 +53,7 @@ require_once("../db.php");
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>J</b>P</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Job</b> Portal</span>
+      <span class="logo-lg"><b>Tìm</b> Việc</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -62,7 +62,7 @@ require_once("../db.php");
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <li>
-            <a href="../jobs.php">Jobs</a>
+            <a href="../jobs.php">Công việc</a>
           </li>          
         </ul>
       </div>
@@ -82,12 +82,12 @@ require_once("../db.php");
               </div>
               <div class="box-body no-padding">
                 <ul class="nav nav-pills nav-stacked">
-                  <li><a href="edit-profile.php"><i class="fa fa-user"></i> Edit Profile</a></li>
-                  <li><a href="index.php"><i class="fa fa-address-card-o"></i> My Applications</a></li>
-                  <li><a href="../jobs.php"><i class="fa fa-list-ul"></i> Jobs</a></li>
-                  <li class="active"><a href="mailbox.php"><i class="fa fa-envelope"></i> Mailbox</a></li>
-                  <li><a href="settings.php"><i class="fa fa-gear"></i> Settings</a></li>
-                  <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Logout</a></li>
+                  <li><a href="edit-profile.php"><i class="fa fa-user"></i> Chỉnh sửa hồ sơ</a></li>
+                  <li><a href="index.php"><i class="fa fa-address-card-o"></i> Đơn xin việc của tôi</a></li>
+                  <li><a href="../jobs.php"><i class="fa fa-list-ul"></i> Công việc</a></li>
+                  <li class="active"><a href="mailbox.php"><i class="fa fa-envelope"></i> Hộp thư</a></li>
+                  <li><a href="settings.php"><i class="fa fa-gear"></i> Cài đặt</a></li>
+                  <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Đăng xuất</a></li>
                 </ul>
               </div>
             </div>
@@ -98,9 +98,9 @@ require_once("../db.php");
         <div class="col-md-12">
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title" style="margin-bottom: 20px;">Mailbox</h3>
+              <h3 class="box-title" style="margin-bottom: 20px;">Hộp thư</h3>
               <div class="pull-right">
-                <a href="create-mail.php" class="btn btn-warning btn-flat"><i class="fa fa-envelope"></i> Create</a>
+                <a href="create-mail.php" class="btn btn-warning btn-flat"><i class="fa fa-envelope"></i> Tạo</a>
               </div>
               <!-- /.box-tools -->
             </div>
@@ -110,8 +110,8 @@ require_once("../db.php");
                 <table id="example1" class="table table-hover table-striped">
                   <thead>
                     <tr>
-                      <th>Subject</th>
-                      <th>Date</th>
+                      <th>Chủ đề</th>
+                      <th>Ngày</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -162,10 +162,7 @@ require_once("../db.php");
   <!-- /.content-wrapper -->
 
   <footer class="main-footer" style="margin-left: 0px;">
-    <div class="text-center">
-      <strong>Copyright &copy; 2016-2017 <a href="jonsnow.netai.net">Job Portal</a>.</strong> All rights
-    reserved.
-    </div>
+    
   </footer>
 
 

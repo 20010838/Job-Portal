@@ -11,7 +11,7 @@ if(empty($_SESSION['id_user'])) {
 //Including Database Connection From db.php file to avoid rewriting in all files
 require_once("../db.php");
 
-//if user Actually clicked update profile button
+// nếu người dùng Thực sự đã nhấp vào nút cập nhật hồ sơ
 if(isset($_POST)) {
 
 	//Escape Special Characters
@@ -19,10 +19,10 @@ if(isset($_POST)) {
 	$lastname = mysqli_real_escape_string($conn, $_POST['lname']);
 	$address = mysqli_real_escape_string($conn, $_POST['address']);
 	$city = mysqli_real_escape_string($conn, $_POST['city']);
-	$state = mysqli_real_escape_string($conn, $_POST['state']);
+
 	$contactno = mysqli_real_escape_string($conn, $_POST['contactno']);
 	$qualification = mysqli_real_escape_string($conn, $_POST['qualification']);
-	$stream = mysqli_real_escape_string($conn, $_POST['stream']);
+
 	$skills = mysqli_real_escape_string($conn, $_POST['skills']);
 	$aboutme = mysqli_real_escape_string($conn, $_POST['aboutme']);
 
@@ -44,12 +44,12 @@ if(isset($_POST)) {
 			
 			if($resumeFileType == "pdf")  {
 
-				if($_FILES['resume']['size'] < 500000) { // File size is less than 5MB
+				if($_FILES['resume']['size'] < 10000000) { // File size is less than 5MB
 
 					move_uploaded_file($_FILES["resume"]["tmp_name"], $filename);
 
 				} else {
-					$_SESSION['uploadError'] = "Wrong Size. Max Size Allowed : 5MB";
+					$_SESSION['uploadError'] = "Wrong Size. Max Size Allowed : 10MB";
 					header("Location: edit-profile.php");
 					exit();
 				}
@@ -65,8 +65,8 @@ if(isset($_POST)) {
 
 	
 
-	//Update User Details Query
-	$sql = "UPDATE users SET firstname='$firstname', lastname='$lastname', address='$address', city='$city', state='$state', contactno='$contactno', qualification='$qualification', stream='$stream', skills='$skills', aboutme='$aboutme'";
+// Cập nhật truy vấn chi tiết người dùng
+	$sql = "UPDATE users SET firstname='$firstname', lastname='$lastname', address='$address', city='$city', contactno='$contactno', qualification='$qualification',  skills='$skills', aboutme='$aboutme'";
 
 	if($uploadOk == true) {
 		$sql .= ", resume='$file'";
@@ -76,7 +76,7 @@ if(isset($_POST)) {
 
 	if($conn->query($sql) === TRUE) {
 		$_SESSION['name'] = $firstname.' '.$lastname;
-		//If data Updated successfully then redirect to dashboard
+		// Nếu dữ liệu được cập nhật thành công thì chuyển hướng đến trang tổng quan
 		header("Location: index.php");
 		exit();
 	} else {

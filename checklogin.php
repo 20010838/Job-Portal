@@ -26,7 +26,7 @@ if(isset($_POST)) {
 		while($row = $result->fetch_assoc()) {
 
 			if($row['active'] == '0') {
-				$_SESSION['loginActiveError'] = "Your Account Is Not Active. Check Your Email.";
+				$_SESSION['loginActiveError'] = "Tài khoản của bạn không hoạt động. Kiểm tra email của bạn.";
 		 		header("Location: login-candidates.php");
 				exit();
 			} else if($row['active'] == '1') { 
@@ -47,7 +47,7 @@ if(isset($_POST)) {
 				}
 			} else if($row['active'] == '2') { 
 
-				$_SESSION['loginActiveError'] = "Your Account Is Deactivated. Contact Admin To Reactivate.";
+				$_SESSION['loginActiveError'] = "Tài khoản của bạn bị vô hiệu hóa. Liên hệ với quản trị viên để kích hoạt lại.";
 		 		header("Location: login-candidates.php");
 				exit();
 			}

@@ -16,7 +16,7 @@ require_once("../db.php");
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Job Portal</title>
+  <title>Tìm kiếm việc làm</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -51,7 +51,7 @@ require_once("../db.php");
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>J</b>P</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Job</b> Portal</span>
+      <span class="logo-lg"><b>Tìm</b> Việc</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -60,7 +60,7 @@ require_once("../db.php");
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <li>
-            <a href="../jobs.php">Jobs</a>
+            <a href="../jobs.php">Công việc</a>
           </li>
         </ul>
       </div>
@@ -80,30 +80,30 @@ require_once("../db.php");
               </div>
               <div class="box-body no-padding">
                 <ul class="nav nav-pills nav-stacked">
-                  <li><a href="edit-profile.php"><i class="fa fa-user"></i> Edit Profile</a></li>
-                  <li><a href="index.php"><i class="fa fa-address-card-o"></i> My Applications</a></li>
-                  <li><a href="../jobs.php"><i class="fa fa-list-ul"></i> Jobs</a></li>
-                  <li><a href="mailbox.php"><i class="fa fa-envelope"></i> Mailbox</a></li>
-                  <li class="active"><a href="settings.php"><i class="fa fa-gear"></i> Settings</a></li>
-                  <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Logout</a></li>
+                  <li><a href="edit-profile.php"><i class="fa fa-user"></i> Chỉnh sửa hồ sơ</a></li>
+                  <li><a href="index.php"><i class="fa fa-address-card-o"></i> Đơn xin việc của tôi</a></li>
+                  <li><a href="../jobs.php"><i class="fa fa-list-ul"></i> Công việc</a></li>
+                  <li><a href="mailbox.php"><i class="fa fa-envelope"></i> Hộp thư</a></li>
+                  <li class="active"><a href="settings.php"><i class="fa fa-gear"></i> Cài đặt</a></li>
+                  <li><a href="../logout.php"><i class="fa fa-arrow-circle-o-right"></i> Đăng xuất</a></li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="col-md-9 bg-white padding-2">
-            <h2><i>Change Password</i></h2>
-            <p>Type in new password that you want to use</p>
+            <h2><i>Đổi mật khẩu</i></h2>
+            <p>Nhập mật khẩu mới mà bạn muốn sử dụng</p>
             <div class="row">
               <div class="col-md-6">
                 <form id="changePassword" action="change-password.php" method="post">
                   <div class="form-group">
-                    <input id="password" class="form-control input-lg" type="password" name="password" autocomplete="off" placeholder="Password" required>
+                    <input id="password" class="form-control input-lg" type="password" name="password" autocomplete="off" placeholder="Mật khẩu" required>
                   </div>
                   <div class="form-group">
-                    <input id="cpassword" class="form-control input-lg" type="password" autocomplete="off" placeholder="Confirm Password" required>
+                    <input id="cpassword" class="form-control input-lg" type="password" autocomplete="off" placeholder="Xác nhận mật khẩu" required>
                   </div>
                   <div class="form-group">
-                    <button type="submit" class="btn btn-flat btn-success">Change Password</button>
+                    <button type="submit" class="btn btn-flat btn-success">Đổi mật khẩu</button>
                   </div>
                   <div id="passwordError" class="color-red text-center hide-me">
                     Password Mismatch!!
@@ -112,8 +112,8 @@ require_once("../db.php");
               </div>
               <div class="col-md-6">
                 <form action="deactivate-account.php" method="post">
-                  <label><input type="checkbox" required> I Want To Deactivate My Account</label>
-                  <button type="submit" class="btn btn-danger btn-flat btn-lg">Deactivate My Account</button>
+                  <label><input type="checkbox" required> Tôi muốn hủy kích hoạt tài khoản của mình</label>
+                  <button type="submit" class="btn btn-danger btn-flat btn-lg">Hủy kích hoạt tài khoản của tôi</button>
                 </form>
               </div>
             </div>
@@ -130,8 +130,7 @@ require_once("../db.php");
 
   <footer class="main-footer" style="margin-left: 0px;">
     <div class="text-center">
-      <strong>Copyright &copy; 2016-2017 <a href="jonsnow.netai.net">Job Portal</a>.</strong> All rights
-    reserved.
+   
     </div>
   </footer>
 
